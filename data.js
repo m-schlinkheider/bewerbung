@@ -82,7 +82,7 @@ const experienceData = [
     },
     {
         position: 'Gründungsphase Agentur',
-        company: '',
+        company: 'Zweckorientiert. Werbe- und Marketingagentur, Osnabrück',
         period: '01.01.2017 - 20.04.2017'
     },
     {
