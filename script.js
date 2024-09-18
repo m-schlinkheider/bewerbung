@@ -156,7 +156,7 @@ function generateSkillsSection(skills) {
                 <h3>${skillCategory.category}</h3>
                 <ul>`;
         skillCategory.items.forEach(item => {
-            html += `<li>${item}</li>`;
+            html += `<li><span class="material-icons icon">check_circle</span>${item}</li>`;
         });
         html += '</ul></div>';
     });
