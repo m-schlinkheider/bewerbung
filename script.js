@@ -150,16 +150,43 @@ function generateExperienceSection(experiences) {
 
 function generateEducationSection(education) {
     let html = '';
-    education.forEach(edu => {
+    education.forEach(category => {
         html += `
-            <div class="education">
-                <h3>${edu.degree}</h3>
-                <p><strong>Institution:</strong> ${edu.institution}</p>
-                <p><strong>Zeitraum:</strong> ${edu.period}</p>
-                ${edu.details ? `<p><strong>Details:</strong> ${edu.details}</p>` : ''}
-            </div>
+            <button class="accordion">${category.category}</button>
+            <div class="panel">
         `;
+        category.entries.forEach(edu => {
+            html += `
+                <div class="education">
+                    <h3>${edu.degree}</h3>
+                    <p><strong>Institution:</strong> ${edu.institution}</p>
+                    <p><strong>Zeitraum:</strong> ${edu.period}</p>
+                    ${edu.details ? `<p><strong>Details:</strong> ${edu.details}</p>` : ''}
+                </div>
+            `;
+        });
+        html += `</div>`;
     });
+
+    // Akkordeon-Funktionalität hinzufügen
+    setTimeout(() => {
+        const acc = document.getElementsByClassName('accordion');
+        for (let i = 0; i < acc.length; i++) {
+            acc[i].addEventListener('click', function() {
+                // Toggle zwischen aktivem und inaktivem Zustand
+                this.classList.toggle('active');
+
+                // Panel ein- oder ausblenden
+                const panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        }
+    }, 0);
+
     return html;
 }
 

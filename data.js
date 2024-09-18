@@ -61,19 +61,83 @@ const experienceData = [
         period: '01.07.2015 - 31.12.2016',
         details: 'Videoproduktion, Sounddesign, Audiodesign'
     },
+    {
+        position: 'Leitender Angestellter Fachmann für Systemgastronomie',
+        company: 'Systemgastronomie Christian Eckstein GmbH & Co. KG, McDonald´s Deutschland, Osnabrück',
+        period: '01.02.2009 - 30.06.2015',
+        details: 'Geschäftskorrespondenz, Kundenbetreuung & Beschwerdemanagement, Umsatz- und Personalplanung, Koordination der Warenwirtschaft'
+    },
+    {
+        position: 'Angestellt bei',
+        company: 'Systemgastronomie Ziemek GmbH, McDonald´s Deutschland, Osnabrück',
+        period: '16.01.2006 - 31.07.2006',
+        details: 'Mitarbeiter im Restaurant'
+    }
     // Weitere Berufserfahrungen hinzufügen
 ];
 
 // Bildung
 const educationData = [
     {
+        category: 'Berufliche Ausbildung',
+        entries: [
+    {
         degree: 'Fachmann für Systemgastronomie',
         institution: 'Systemgastronomie Christian Eckstein GmbH & Co. KG, McDonald\'s Deutschland, Osnabrück',
         period: '01.08.2006 - 22.01.2009',
         details: 'Abschluss als Fachmann für Systemgastronomie'
     },
+    {
+        degree: 'IT-Systemkaufmann',
+        institution: 'Wortmann AG',
+        period: '01.08.2003 - 21.07.2004',
+        details: 'Auszubildender'
+    }    
     // Weitere Bildungsabschlüsse hinzufügen
-];
+  ]
+},
+{
+    category: 'Zivildienst',
+    entries: [
+        {
+            degree: 'Zivildienstleistender',
+            institution: 'Schloss Varenholz GmbH',
+            period: '04.04.2005 - 31.12.2005',
+            details: 'Internatsgesellschaft für Kinder- und Jugendhilfe'
+        }
+        // Weitere Einträge hinzufügen
+    ]
+},
+{
+    category: 'Schulausbildung',
+    entries: [
+        {
+            degree: 'Schüler',
+            institution: 'Berufsschulzentrum am Westerberg',
+            period: '01.08.2006 - 22.01.2009',
+            details: 'Abschluss als Fachmann für Systemgastronomie'
+        },
+        {
+            degree: 'Schüler',
+            institution: 'Berufskolleg Lübbecke des Kreises Minden-Lübbecke',
+            period: '15.09.2003 -21.07.2004',
+            details: 'Fachbereich IT-Systemkaufmann'
+        },
+        {
+            degree: 'Schüler',
+            institution: 'Städtische Hauptschule Meierfeld, Herford',
+            period: '2000-2002',
+            details: 'Abschluss Sekundarstufe I'
+        },
+        {
+            degree: 'Schüler',
+            institution: 'Königin-Mathilde-Gymnasium der Stadt Herford',
+            period: '1994 -2000'
+        }
+        // Weitere Einträge hinzufügen
+    ]
+}
+];  
 
 // Projekte
 const projectsData = [
