@@ -123,24 +123,13 @@ document.addEventListener('DOMContentLoaded', function() {
 function generateSkillsSection(skills) {
     let html = '';
 
-    // Persönliche Stärken separat behandeln
-    const personalStrengths = skills.find(skill => skill.category === 'Persönliche Stärken');
-    if (personalStrengths) {
-        html += `<h3 class="centered">${personalStrengths.category}</h3><ul class="centered">`;
-        personalStrengths.items.forEach(item => {
-            html += `<li>${item}</li>`;
-        });
-        html += '</ul>';
-    }
-
-    // Entferne Persönliche Stärken aus dem Array
-    const otherSkills = skills.filter(skill => skill.category !== 'Persönliche Stärken');
-
     // Container für die nebeneinander angezeigten Kategorien
     html += '<div class="skills-container">';
 
-    otherSkills.forEach(skillCategory => {
-        html += `<div class="skill-column"><h3>${skillCategory.category}</h3><ul>`;
+    skills.forEach(skillCategory => {
+        html += `<div class="skill-column">
+                    <h3>${skillCategory.category}</h3>
+                    <ul>`;
         skillCategory.items.forEach(item => {
             html += `<li>${item}</li>`;
         });
