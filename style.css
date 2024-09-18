@@ -168,11 +168,12 @@ a:hover {
 
 /* Zentrierte Überschrift und Liste für Persönliche Stärken */
 .centered {
+    display: flex;
     text-align: left;
 }
 
 .centered ul {
-    display: inline-block;
+    display: flex;
     text-align: left;
 }
 
