@@ -72,6 +72,11 @@ ul {
     padding: 10px 0;
     cursor: pointer;
     color: #888;
+    transition: color 0.3s ease;
+}
+
+.bottom-nav li:hover {
+    color: #0056b3;
 }
 
 .bottom-nav li.active {
@@ -128,10 +133,11 @@ a:hover {
     transition: background-color 0.2s ease;
     font-size: 18px;
     margin-top: 10px;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .accordion.active, .accordion:hover {
-    background-color: #ccc;
+    background-color: #e0e0e0;
 }
 
 .panel {
@@ -189,6 +195,9 @@ a:hover {
     flex: 1;
     min-width: 250px;
     margin: 10px;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
 }
 
 /* Überschriften der Fähigkeiten */
@@ -206,6 +215,17 @@ a:hover {
     margin: 5px 0;
 }
 
+.skill-column li:hover {
+    color: #007BFF;
+    cursor: default;
+}
+
+.skill-column li .material-icons {
+    margin-right: 5px;
+    color: #007BFF;
+}
+
+
 /* Responsive Anpassung */
 @media (max-width: 768px) {
     .skills-container {
@@ -216,4 +236,117 @@ a:hover {
     .skill-column {
         margin: 10px 0;
     }
+}
+
+/* Persönliche Stärken und Profilbild nebeneinander */
+.personal-strengths-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.strengths-list {
+    flex: 1;
+}
+
+.strengths-list h3 {
+    text-align: left;
+}
+
+.strengths-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.strengths-list li {
+    margin: 5px 0;
+    text-align: left;
+}
+
+.profile-image {
+    margin-left: 20px;
+    animation: slideInRight 1s ease-in-out;
+}
+
+.profile-image img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+/* Animationen */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Übergänge für Hover-Effekte */
+.skill-column li, .strengths-list li {
+    transition: color 0.3s ease;
+}
+
+.skill-column li:hover, .strengths-list li:hover {
+    color: #007BFF;
+    cursor: default;
+}
+
+/* Anpassungen für die Skills-Container */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.skill-column {
+    flex: 1;
+    min-width: 250px;
+    margin: 10px;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Anpassung */
+@media (max-width: 768px) {
+    .personal-strengths-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-image {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+}
+
+.icon {
+    font-size: 16px;
+    vertical-align: middle;
+    margin-right: 5px;
+    color: #007BFF;
 }

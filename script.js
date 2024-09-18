@@ -126,11 +126,26 @@ function generateSkillsSection(skills) {
     // Persönliche Stärken separat behandeln
     const personalStrengths = skills.find(skill => skill.category === 'Persönliche Stärken');
     if (personalStrengths) {
-        html += `<h3 class="centered">${personalStrengths.category}</h3><ul class="centered">`;
+        html += `
+            <div class="personal-strengths-container">
+                <div class="strengths-list">
+                    <h3>${personalStrengths.category}</h3>
+                    <ul>
+        `;
+        skillCategory.items.forEach(item => {
+            html += `<li><span class="material-icons icon">check_circle</span>${item}</li>`;
+        });        
         personalStrengths.items.forEach(item => {
             html += `<li>${item}</li>`;
         });
-        html += '</ul>';
+        html += `
+                    </ul>
+                </div>
+                <div class="profile-image">
+                    <img src="${personalData.profileImage || 'assets/bild_linkedin.jpg'}" alt="Profilfoto">
+                </div>
+            </div>
+        `;
     }
 
     // Entferne Persönliche Stärken aus dem Array
@@ -140,7 +155,9 @@ function generateSkillsSection(skills) {
     html += '<div class="skills-container">';
 
     otherSkills.forEach(skillCategory => {
-        html += `<div class="skill-column"><h3>${skillCategory.category}</h3><ul>`;
+        html += `<div class="skill-column">
+                <h3>${skillCategory.category}</h3>
+                <ul>`;
         skillCategory.items.forEach(item => {
             html += `<li>${item}</li>`;
         });
