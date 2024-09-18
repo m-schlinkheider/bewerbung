@@ -165,3 +165,55 @@ a:hover {
         width: 100%;
     }
 }
+
+/* Zentrierte Überschrift und Liste für Persönliche Stärken */
+.centered {
+    text-align: center;
+}
+
+.centered ul {
+    display: inline-block;
+    text-align: left;
+}
+
+/* Container für nebeneinander angeordnete Fähigkeiten */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* Spalten für die Fähigkeiten */
+.skill-column {
+    flex: 1;
+    min-width: 250px;
+    margin: 10px;
+}
+
+/* Überschriften der Fähigkeiten */
+.skill-column h3 {
+    text-align: center;
+}
+
+/* Listenstil für Fähigkeiten */
+.skill-column ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.skill-column li {
+    margin: 5px 0;
+}
+
+/* Responsive Anpassung */
+@media (max-width: 768px) {
+    .skills-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .skill-column {
+        margin: 10px 0;
+    }
+}
