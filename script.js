@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     </section>
                 `;
                 break;
-            case 'erfahrung':
+            case 'Berufspraxis':
                 sectionContent = `
                     <section>
                         <h2>Berufspraxis</h2>
