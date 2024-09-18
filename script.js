@@ -131,10 +131,7 @@ function generateSkillsSection(skills) {
                 <div class="strengths-list">
                     <h3>${personalStrengths.category}</h3>
                     <ul>
-        `;
-        skillCategory.items.forEach(item => {
-            html += `<li><span class="material-icons icon">check_circle</span>${item}</li>`;
-        });        
+        `;       
         personalStrengths.items.forEach(item => {
             html += `<li>${item}</li>`;
         });

@@ -72,7 +72,6 @@ ul {
     padding: 10px 0;
     cursor: pointer;
     color: #888;
-    transition: color 0.3s ease;
 }
 
 .bottom-nav li:hover {
@@ -133,7 +132,6 @@ a:hover {
     transition: background-color 0.2s ease;
     font-size: 18px;
     margin-top: 10px;
-    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .accordion.active, .accordion:hover {
@@ -145,7 +143,6 @@ a:hover {
     background-color: white;
     overflow: hidden;
     max-height: 0;
-    transition: max-height 0.2s ease-out;
 }
 
 .education {
