@@ -166,6 +166,16 @@ a:hover {
     }
 }
 
+/* Zentrierte Überschrift und Liste für Persönliche Stärken */
+.centered {
+    text-align: left;
+}
+
+.centered ul {
+    display: inline-block;
+    text-align: left;
+}
+
 /* Container für nebeneinander angeordnete Fähigkeiten */
 .skills-container {
     display: flex;
@@ -184,7 +194,6 @@ a:hover {
 /* Überschriften der Fähigkeiten */
 .skill-column h3 {
     text-align: left;
-    margin-bottom: 10px;
 }
 
 /* Listenstil für Fähigkeiten */
@@ -195,14 +204,13 @@ a:hover {
 
 .skill-column li {
     margin: 5px 0;
-    text-align: left;
 }
 
 /* Responsive Anpassung */
 @media (max-width: 768px) {
     .skills-container {
         flex-direction: column;
-        align-items: stretch;
+        align-items: center;
     }
 
     .skill-column {
