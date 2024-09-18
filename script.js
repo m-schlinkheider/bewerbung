@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const tabs = [
         { id: 'profil', label: 'Profil', icon: 'person' },
         { id: 'faehigkeiten', label: 'Fähigkeiten', icon: 'star' },
-        { id: 'erfahrung', label: 'Erfahrung', icon: 'work' },
+        { id: 'berufspraxis', label: 'Berufspraxis', icon: 'work' },
         { id: 'bildung', label: 'Bildung', icon: 'school' },
         { id: 'projekte', label: 'Projekte', icon: 'folder' }
     ];
