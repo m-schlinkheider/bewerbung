@@ -28,6 +28,24 @@ const skillsData = [
             'Künstliche Intelligenz (KI)',
             'Codierung',
             'Entwicklung individuell zugeschnittener CMS',
+            'Soziale Medien',
+            'Social-Media-Marketing',
+            'Visual Storytelling',
+            'Videoproduktion',
+            'Videoschnitt',
+            'Stop-Motion',
+            'Keyframe-Animation',
+            'Audioschnitt',
+            'Animation',
+            'Audio-Nachbearbeitung',
+            'Projektmanagement',
+            'Personalmanagement',
+            'Online-Marketing',
+            'Webdesign',
+            'Wordpress-Design',
+            'E-Commerce SEO',
+            'Onlinewerbung',
+            'Suchmaschinenoptimierung (SEO)'
             // Weitere Punkte hinzufügen
         ]
     },
@@ -37,6 +55,18 @@ const skillsData = [
             'Python (Programmiersprache)',
             'Open Source Software',
             'ChatGPT',
+            'Midjourney',
+            'Udio',
+            'HTML',
+            'Cascading Style Sheets (CSS)',
+            'JavaScript',
+            'Wordpress',
+            'Content-Managment-System (CMS)',
+            'Google Webmaster Tools',
+            'Google Analytics',
+            'Facebook',
+            'Adobe Premiere Pro',
+            'Adobe After Effects'
             // Weitere Punkte hinzufügen
         ]
     }
