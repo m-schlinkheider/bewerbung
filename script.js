@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
         switch (tab.id) {
             case 'profil':
                 sectionContent = `
-                    <section>
+                    <section id="profil">
                         <h1>${personalData.name}</h1>
                         <img src="${profileImage}" alt="Profilfoto">
                         <p>${personalData.description}</p>
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
             case 'projekte':
                 sectionContent = `
                     <section>
-                        <h2>Projekte</h2>
+                        <h2>Projekte</2>
                         ${generateProjectsSection(projectsData)}
                     </section>
                 `;
