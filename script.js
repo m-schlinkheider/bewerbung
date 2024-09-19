@@ -148,7 +148,49 @@ function initAccordions() {
 
 // Funktionen zum Generieren der Inhalte
 function generateSkillsSection(skills) {
-    // ... Ihr bestehender Code ...
+    let html = '';
+
+    // Persönliche Stärken separat behandeln
+    const personalStrengths = skills.find(skill => skill.category === 'Persönliche Stärken');
+    if (personalStrengths) {
+        html += `
+            <div class="personal-strengths-container">
+                <div class="strengths-list">
+                    <h3>${personalStrengths.category}</h3>
+                    <ul>
+        `;       
+        personalStrengths.items.forEach(item => {
+            html += `<li>${item}</li>`;
+        });
+        html += `
+                    </ul>
+                </div>
+                <div class="profile-image">
+                    <img src="${personalData.profileImage || 'assets/bild_linkedin.jpg'}" alt="Profilfoto">
+                </div>
+            </div>
+        `;
+    }
+
+    // Entferne Persönliche Stärken aus dem Array
+    const otherSkills = skills.filter(skill => skill.category !== 'Persönliche Stärken');
+
+    // Container für die nebeneinander angezeigten Kategorien
+    html += '<div class="skills-container">';
+
+    otherSkills.forEach(skillCategory => {
+        html += `<div class="skill-column">
+                <h3>${skillCategory.category}</h3>
+                <ul>`;
+        skillCategory.items.forEach(item => {
+            html += `<li><span class="material-icons icon">check_circle</span>${item}</li>`;
+        });
+        html += '</ul></div>';
+    });
+
+    html += '</div>'; // Schließen des skills-container div
+
+    return html;
 }
 
 function generateExperienceSection(experiences) {
