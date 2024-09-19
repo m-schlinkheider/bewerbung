@@ -361,3 +361,83 @@ a:hover {
     margin-right: 5px;
     color: #007BFF;
 }
+
+/* Styling für den Download-Button */
+.download-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.download-button:hover {
+    background-color: #0056b3;
+}
+
+/* Kontaktinformationen als schmaler Streifen fix unter dem Menü */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #ffffff;
+    border-top: 1px solid #e0e0e0;
+    padding: 10px 0;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.contact-info p {
+    margin: 5px;
+    font-size: 14px;
+}
+
+.contact-info a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* Anpassungen für die untere Navigationsleiste */
+.bottom-nav {
+    position: fixed;
+    bottom: 50px; /* Platz für den Kontaktstreifen */
+    width: 100%;
+    background-color: #ffffff;
+    border-top: 1px solid #e0e0e0;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+/* Anpassung des Inhaltsbereichs */
+.content {
+    padding-bottom: 130px; /* Platz für die Navigationsleiste und den Kontaktstreifen */
+}
+
+/* Responsive Anpassung für Kontaktinformationen */
+@media (max-width: 600px) {
+    .contact-info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .bottom-nav {
+        bottom: 60px; /* Anpassen je nach Höhe des Kontaktstreifens auf kleinen Bildschirmen */
+    }
+}

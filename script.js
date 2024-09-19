@@ -44,6 +44,9 @@ document.addEventListener('DOMContentLoaded', function() {
                         <h1>${personalData.name}</h1>
                         <img src="${profileImage}" alt="Profilfoto">
                         <p>${personalData.description}</p>
+                        <a href="M-Schlinkheider_Lebenslauf_2024.pdf" class="download-button" download>
+                           Lebenslauf herunterladen
+                        </a>
                     </section>
                 `;
                 break;
