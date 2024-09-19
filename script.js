@@ -244,7 +244,7 @@ function generateProjectsSection(projects) {
         // Projekte sind nach Kategorien gruppiert
         projects.forEach(category => {
             html += `
-                <div class="project-category">
+                <div class="section project-category">
                     <h3>${category.category}</h3>
                     <div class="projects-container">
             `;
@@ -271,7 +271,7 @@ function generateProjectsSection(projects) {
         });
     } else {
         // Projekte sind nicht nach Kategorien gruppiert
-        html += '<div class="projects-container">';
+        html += '<div class="section projects-container">';
         projects.forEach(project => {
             html += `
                 <div class="project-card">
