@@ -421,9 +421,11 @@ footer {
 .contact-info a {
     color: #007BFF;
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 .contact-info a:hover {
+    color: #0056b3; /* Dunklere Farbe beim Hover */
     text-decoration: underline;
 }
 

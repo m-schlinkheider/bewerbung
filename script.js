@@ -90,9 +90,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Kontaktinformationen
     const contactInfoDiv = document.querySelector('.contact-info');
     contactInfoDiv.innerHTML = `
-        <p><strong>Email:</strong> ${contactData.email}</p>
-        <p><strong>Telefon:</strong> ${contactData.phone}</p>
-        <p><strong>LinkedIn:</strong> <a href="${contactData.linkedin}">${personalData.name}</a></p>
+        <p><span class="material-icons">email</span> <a href="mailto:${contactData.email}">${contactData.email}</p>
+        <p><span class="material-icons">phone</span> ${contactData.phone}</p>
+        <p><span class="material-icons">linkedin</span> <a href="${contactData.linkedin}">${personalData.name}</a></p>
     `;
 
     // Tab-Navigation Funktionalität
