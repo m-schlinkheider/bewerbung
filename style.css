@@ -530,7 +530,6 @@ footer {
     width: 150px;
     height: auto;
     border-radius: 5px;
-    margin-bottom: 15px;
     object-fit: cover; /* Bild skalieren ohne Verzerrung */
 }
 
@@ -554,11 +553,6 @@ footer {
     background-color: #0056b3;
 }
 
-/* Abstand zwischen den Sektionen */
-.section {
-    margin-bottom: 60px; /* Abstand nach unten */
-}
-
 /* Responsive Anpassungen */
 
 /* Für größere Bildschirme: Zwei Karten nebeneinander */
@@ -573,4 +567,9 @@ footer {
     .project-card {
         width: 100%; /* Eine Karte pro Reihe */
     }
+}
+
+/* Abstand zwischen den Sektionen */
+.section {
+    margin-bottom: 60px; /* Abstand nach unten */
 }
