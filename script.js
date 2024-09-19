@@ -237,16 +237,21 @@ function generateEducationSection(education) {
 }
 
 function generateProjectsSection(projects) {
-    let html = '';
+    let html = '<div class="projects-container">';
+
     projects.forEach(project => {
         html += `
-            <div class="project">
-                <h3>${project.title}</h3>
+            <div class="project-card">
+                <h4>${project.title}</h4>
                 <p>${project.description}</p>
-                ${project.details ? `<h4>Details</h4><p>${project.details}</p>` : ''}
-                ${project.technologies ? `<p><strong>Kenntnisse:</strong> ${project.technologies.join(', ')}</p>` : ''}
+                ${project.details ? `<p><strong>Details:</strong> ${project.details}</p>` : ''}
+                ${project.technologies && project.technologies.length > 0 ? `
+                    <p><strong>Technologien:</strong> ${project.technologies.join(', ')}</p>
+                ` : ''}
             </div>
         `;
     });
+    html += '</div>';
+    
     return html;
 }

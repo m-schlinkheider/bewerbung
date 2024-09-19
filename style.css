@@ -466,3 +466,69 @@ footer {
 .accordion.active::after {
     content: '\2212'; /* Minuszeichen */
 }
+
+/* Projekte Kategorie-Stile */
+.project-category {
+    margin-bottom: 40px;
+}
+
+.project-category h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Projekte Container */
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Projektkarte */
+.project-card {
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    width: calc(33.333% - 40px); /* Drei Spalten mit Abstand */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.project-card h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #007BFF;
+}
+
+.project-card p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.project-card p strong {
+    color: #333;
+}
+
+/* Responsive Anpassungen */
+@media (max-width: 992px) {
+    .project-card {
+        width: calc(50% - 40px); /* Zwei Spalten */
+    }
+}
+
+@media (max-width: 600px) {
+    .projects-container {
+        flex-direction: column;
+    }
+    .project-card {
+        width: 100%; /* Eine Spalte */
+    }
+}
