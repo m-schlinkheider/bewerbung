@@ -237,23 +237,53 @@ function generateEducationSection(education) {
 }
 
 function generateProjectsSection(projects) {
-    let html = '<div class="projects-container">';
+    let html = '';
 
-    projects.forEach(project => {
-        html += `
-            <div class="project-card">
-                ${project.image ? `<img src="${project.image}" alt="${project.title}">` : ''}
-                <h4>${project.title}</h4>
-                <p>${project.description}</p>
-                ${project.details ? `<p><strong>Details:</strong> ${project.details}</p>` : ''}
-                ${project.technologies && project.technologies.length > 0 ? `
-                    <p><strong>Technologien:</strong> ${project.technologies.join(', ')}</p>
-                ` : ''}
-                ${project.link ? `<a href="${project.link}" target="_blank" class="project-link">Mehr erfahren</a>` : ''}
-            </div>
-        `;
-    });
-    html += '</div>';
+    // Prüfen, ob Projekte nach Kategorien gruppiert sind
+    if (projects.length > 0 && projects[0].projects) {
+        // Projekte sind nach Kategorien gruppiert
+        projects.forEach(category => {
+            html += `
+                <div class="project-category">
+                    <h3>${category.category}</h3>
+                    <div class="projects-container">
+            `;
+            category.projects.forEach(project => {
+                html += `
+                    <div class="project-card">
+                        <h4>${project.title}</h4>
+                        <p>${project.description}</p>
+                        ${project.details ? `<p><strong>Details:</strong> ${project.details}</p>` : ''}
+                        ${project.technologies && project.technologies.length > 0 ? `
+                            <p><strong>Technologien:</strong> ${project.technologies.join(', ')}</p>
+                        ${project.link ? `<a href="${project.link}" target="_blank" class="project-link">Zum Projekt</a>` : ''}    
+                        ` : ''}
+                    </div>
+                `;
+            });
+            html += `
+                    </div>
+                </div>
+            `;
+        });
+    } else {
+        // Projekte sind nicht nach Kategorien gruppiert
+        html += '<div class="projects-container">';
+        projects.forEach(project => {
+            html += `
+                <div class="project-card">
+                    <h4>${project.title}</h4>
+                    <p>${project.description}</p>
+                    ${project.details ? `<p><strong>Details:</strong> ${project.details}</p>` : ''}
+                    ${project.technologies && project.technologies.length > 0 ? `
+                        <p><strong>Technologien:</strong> ${project.technologies.join(', ')}</p>
+                    ${project.link ? `<a href="${project.link}" target="_blank" class="project-link">Zum Projekt</a>` : ''}    
+                    ` : ''}
+                </div>
+            `;
+        });
+        html += '</div>';
+    }
 
     return html;
 }

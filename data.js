@@ -185,7 +185,10 @@ const educationData = [
 // Projekte
 const projectsData = [
     {
-        title: 'Projekt 1: Automatisierung für die Auswertung von Umfragen aus LimeSurvey',
+      category: 'Entwicklung/Automatisierung',
+      projects: [
+       {   
+        title: 'Automatisierung für die Auswertung von Umfragen aus LimeSurvey',
         description: 'Dieses Projekt bietet eine vollständige Automatisierungslösung zur Auswertung von Umfragen, die mit LimeSurvey durchgeführt wurden.',
         details: 'Die Lösung umfasst Module und Skripte für die Datenextraktion, -verarbeitung, -aggregation und -darstellung.',
         technologies: ['Codierung', 'Python', 'Künstliche Intelligenz', 'Open Source Software', 'Projektmanagement', 'HTML', 'CSS', 'JavaScript', 'ChatGPT'],
@@ -198,6 +201,20 @@ const projectsData = [
         details: 'Die Suchfunktion verbessert die Benutzerfreundlichkeit und Zugänglichkeit der Webseite erheblich und optimiert die digitale Kundenerfahrung.',
         technologies: ['JSON', 'JavaScript', 'CSS', 'Stylus', 'Analytische Fähigkeiten', 'PugJS', 'HTML', 'Algorithmen', 'Künstliche Intelligenz', 'Projektplanung', 'Codierung', 'ChatGPT'],
         image: 'assets/projekt2.jpg' // Pfad zum Bild
-    },
+    }
+  ]
+},
+{
+     category: 'Webentwicklung',
+     projects: [
+        {
+            title: 'Webseite 1',
+            description: 'Beschreibung',
+            details: '',
+            technologies: ['Webdesign', 'Wordpress-Design', 'Suchmaschinenoptimierung (SEO)'],
+            image: 'assets/OSSTEC.jpg' // Pfad zum Bild
+        }
+     ]
+}  
     // Weitere Projekte hinzufügen
 ];
