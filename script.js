@@ -133,7 +133,7 @@ function initAccordions() {
         if (event.target.classList.contains('accordion')) {
             event.target.classList.toggle('active');
 
-            const panel = this.nextElementSibling;
+            const panel = event.target.nextElementSibling;
             if (panel.style.maxHeight) {
                 panel.style.maxHeight = null;
             } else {
