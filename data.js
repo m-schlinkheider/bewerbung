@@ -189,7 +189,7 @@ const projectsData = [
         description: 'Dieses Projekt bietet eine vollständige Automatisierungslösung zur Auswertung von Umfragen, die mit LimeSurvey durchgeführt wurden.',
         details: 'Die Lösung umfasst Module und Skripte für die Datenextraktion, -verarbeitung, -aggregation und -darstellung.',
         technologies: ['Codierung', 'Python', 'Künstliche Intelligenz', 'Open Source Software', 'Projektmanagement', 'HTML', 'CSS', 'JavaScript', 'ChatGPT'],
-        image: 'assets/projekte/automat.webp', // Pfad zum Bild
+        image: 'assets/automat.webp', // Pfad zum Bild
         link: 'https://umfrage.resilientfutures.science/index.php/255946?lang=de'
     },
     {
@@ -197,7 +197,7 @@ const projectsData = [
         description: 'Implementierung einer leistungsstarken Suchfunktion für eine mehrsprachige Webseite, die in sieben Sprachen angeboten wird und über einen statischen Seitengenerator läuft.',
         details: 'Die Suchfunktion verbessert die Benutzerfreundlichkeit und Zugänglichkeit der Webseite erheblich und optimiert die digitale Kundenerfahrung.',
         technologies: ['JSON', 'JavaScript', 'CSS', 'Stylus', 'Analytische Fähigkeiten', 'PugJS', 'HTML', 'Algorithmen', 'Künstliche Intelligenz', 'Projektplanung', 'Codierung', 'ChatGPT'],
-        image: 'assets/projekte/projekt2.jpg' // Pfad zum Bild
+        image: 'assets/projekt2.jpg' // Pfad zum Bild
     },
     // Weitere Projekte hinzufügen
 ];
