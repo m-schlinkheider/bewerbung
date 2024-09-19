@@ -19,6 +19,13 @@ body {
     margin: auto;
 }
 
+/* Überschreibe die max-width für die Projekte-Tab-Inhalte */
+.tab-content#projekte {
+    max-width: 1200px; /* Erhöht die maximale Breite */
+    margin: 0 auto;     /* Zentriert den Container */
+    padding: 20px;      /* Optional: Innenabstand */
+}
+
 .tab-content.active {
     display: block;
 }
