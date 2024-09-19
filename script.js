@@ -115,6 +115,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Zeige den ausgewählten Tab-Inhalt
             document.getElementById(tabId).classList.add('active');
+
+            // Akkordeon-Funktionalität initialisieren (nach Tab-Wechsel)
+            initAccordions();
         });
     });
 
@@ -124,8 +127,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Funktionen zum Initialisieren der Akkordeon-Funktionalität
 function initAccordions() {
-    const accordions = document.querySelectorAll('.accordion');
+    const accordions = document.querySelectorAll('.tab-content.active .accordion');
     accordions.forEach(function(accordion) {
+        accordion.onclick = null; // Entferne vorherige Event Listener, um Doppelungen zu vermeiden
         accordion.addEventListener('click', function() {
             this.classList.toggle('active');
 
@@ -141,49 +145,7 @@ function initAccordions() {
 
 // Funktionen zum Generieren der Inhalte
 function generateSkillsSection(skills) {
-    let html = '';
-
-    // Persönliche Stärken separat behandeln
-    const personalStrengths = skills.find(skill => skill.category === 'Persönliche Stärken');
-    if (personalStrengths) {
-        html += `
-            <div class="personal-strengths-container">
-                <div class="strengths-list">
-                    <h3>${personalStrengths.category}</h3>
-                    <ul>
-        `;       
-        personalStrengths.items.forEach(item => {
-            html += `<li>${item}</li>`;
-        });
-        html += `
-                    </ul>
-                </div>
-                <div class="profile-image">
-                    <img src="${personalData.profileImage || 'assets/bild_linkedin.jpg'}" alt="Profilfoto">
-                </div>
-            </div>
-        `;
-    }
-
-    // Entferne Persönliche Stärken aus dem Array
-    const otherSkills = skills.filter(skill => skill.category !== 'Persönliche Stärken');
-
-    // Container für die nebeneinander angezeigten Kategorien
-    html += '<div class="skills-container">';
-
-    otherSkills.forEach(skillCategory => {
-        html += `<div class="skill-column">
-                <h3>${skillCategory.category}</h3>
-                <ul>`;
-        skillCategory.items.forEach(item => {
-            html += `<li><span class="material-icons icon">check_circle</span>${item}</li>`;
-        });
-        html += '</ul></div>';
-    });
-
-    html += '</div>'; // Schließen des skills-container div
-
-    return html;
+    // ... Ihr bestehender Code ...
 }
 
 function generateExperienceSection(experiences) {
@@ -199,23 +161,6 @@ function generateExperienceSection(experiences) {
             </div>
         `;
     });
-
-    // Akkordeon-Funktionalität hinzufügen
-    setTimeout(() => {
-        const acc = document.querySelectorAll('#berufspraxis .accordion');
-        acc.forEach(function (accordion) {
-            accordion.addEventListener('click', function () {
-                this.classList.toggle('active');
-
-                const panel = this.nextElementSibling;
-                if (panel.style.maxHeight) {
-                    panel.style.maxHeight = null;
-                } else {
-                    panel.style.maxHeight = panel.scrollHeight + "px";
-                }
-            });
-        });
-    }, 0);
 
     return html;
 }
@@ -239,25 +184,6 @@ function generateEducationSection(education) {
         });
         html += `</div>`;
     });
-
-    // Akkordeon-Funktionalität hinzufügen
-    setTimeout(() => {
-        const acc = document.getElementsByClassName('accordion');
-        for (let i = 0; i < acc.length; i++) {
-            acc[i].addEventListener('click', function() {
-                // Toggle zwischen aktivem und inaktivem Zustand
-                this.classList.toggle('active');
-
-                // Panel ein- oder ausblenden
-                const panel = this.nextElementSibling;
-                if (panel.style.maxHeight) {
-                    panel.style.maxHeight = null;
-                } else {
-                    panel.style.maxHeight = panel.scrollHeight + "px";
-                }
-            });
-        }
-    }, 0);
 
     return html;
 }
