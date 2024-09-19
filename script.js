@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 break;
             case 'bildung':
                 sectionContent = `
-                    <section>
+                    <section id="bildung">
                         <h2>Bildung</h2>
                         ${generateEducationSection(educationData)}
                     </section>
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
             case 'projekte':
                 sectionContent = `
                     <section>
-                        <h2>Projekte</2>
+                        <h2>Projekte</h2>
                         ${generateProjectsSection(projectsData)}
                     </section>
                 `;
@@ -117,8 +117,27 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById(tabId).classList.add('active');
         });
     });
+
+    // Akkordeon-Funktionalität initialisieren
+    initAccordions();
 });
 
+// Funktionen zum Initialisieren der Akkordeon-Funktionalität
+function initAccordions() {
+    const accordions = document.querySelectorAll('.accordion');
+    accordions.forEach(function(accordion) {
+        accordion.addEventListener('click', function() {
+            this.classList.toggle('active');
+
+            const panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+        });
+    });
+}
 // Funktionen zum Generieren der Inhalte
 function generateSkillsSection(skills) {
     let html = '';
