@@ -132,10 +132,23 @@ a:hover {
     transition: background-color 0.2s ease;
     font-size: 18px;
     margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .accordion.active, .accordion:hover {
     background-color: #ccc;
+}
+
+.accordion::after {
+    content: '\002B'; /* Pluszeichen */
+    font-size: 20px;
+    color: #777;
+}
+
+.accordion.active::after {
+    content: '\2212'; /* Minuszeichen */
 }
 
 .panel {
@@ -440,4 +453,14 @@ footer {
     .bottom-nav {
         bottom: 60px; /* Anpassen je nach Höhe des Kontaktstreifens auf kleinen Bildschirmen */
     }
+}
+
+.accordion::after {
+    content: '\002B'; /* Pluszeichen */
+    font-size: 20px;
+    color: #777;
+}
+
+.accordion.active::after {
+    content: '\2212'; /* Minuszeichen */
 }

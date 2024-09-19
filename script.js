@@ -119,8 +119,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Zeige den ausgewählten Tab-Inhalt
             document.getElementById(tabId).classList.add('active');
 
-            // Akkordeon-Funktionalität initialisieren (nach Tab-Wechsel)
-            initAccordions();
+            // Keine Akkordeon-Initialisierung hier mehr
         });
     });
 
@@ -132,8 +131,9 @@ document.addEventListener('DOMContentLoaded', function() {
 function initAccordions() {
     const accordions = document.querySelectorAll('.tab-content.active .accordion');
     accordions.forEach(function(accordion) {
-        accordion.onclick = null; // Entferne vorherige Event Listener, um Doppelungen zu vermeiden
-        accordion.addEventListener('click', function() {
+        // Verhindern, dass Event Listener mehrfach hinzugefügt werden
+        if (!accordion.classList.contains('listener-added')) {
+            accordion.addEventListener('click', function() {
             this.classList.toggle('active');
 
             const panel = this.nextElementSibling;
@@ -143,6 +143,9 @@ function initAccordions() {
                 panel.style.maxHeight = panel.scrollHeight + "px";
             }
         });
+        // Markiere das Akkordeon als mit Listener versehen
+        accordion.classList.add('listener-added');
+        }
     });
 }
 
