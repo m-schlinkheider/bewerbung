@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 break;
             case 'berufspraxis':
                 sectionContent = `
-                    <section>
+                    <section id="berufspraxis">
                         <h2>Berufspraxis</h2>
                         ${generateExperienceSection(experienceData)}
                     </section>
@@ -168,17 +168,35 @@ function generateSkillsSection(skills) {
 
 function generateExperienceSection(experiences) {
     let html = '';
+
     experiences.forEach(exp => {
         html += `
-            <div class="job">
-                <h3>${exp.position}</h3>
-                <p><strong>Unternehmen:</strong> ${exp.company}</p>
+            <button class="accordion">${exp.position} bei ${exp.company}</button>
+            <div class="panel">
                 <p><strong>Zeitraum:</strong> ${exp.period}</p>
                 ${exp.details ? `<p><strong>Details:</strong> ${exp.details}</p>` : ''}
-                ${exp.tasks ? `<ul>${exp.tasks.map(task => `<li>${task}</li>`).join('')}</ul>` : ''}
+                ${exp.tasks && exp.tasks.length > 0 ? `<h4>Aufgaben:</h4><ul>${exp.tasks.map(task => `<li>${task}</li>`).join('')}</ul>` : ''}
             </div>
         `;
     });
+
+    // Akkordeon-Funktionalität hinzufügen
+    setTimeout(() => {
+        const acc = document.querySelectorAll('#berufspraxis .accordion');
+        acc.forEach(function (accordion) {
+            accordion.addEventListener('click', function () {
+                this.classList.toggle('active');
+
+                const panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        });
+    }, 0);
+
     return html;
 }
 

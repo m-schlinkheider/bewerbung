@@ -135,7 +135,7 @@ a:hover {
 }
 
 .accordion.active, .accordion:hover {
-    background-color: #e0e0e0;
+    background-color: #ccc;
 }
 
 .panel {
@@ -143,6 +143,20 @@ a:hover {
     background-color: white;
     overflow: hidden;
     max-height: 0;
+    transition: max-height 0.2s ease-out;
+}
+
+.panel p, .panel h4 {
+    margin: 10px 0;
+}
+
+.panel ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.panel ul li {
+    margin: 5px 0;
 }
 
 .education {

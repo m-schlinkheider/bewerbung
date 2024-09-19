@@ -78,7 +78,12 @@ const experienceData = [
         position: 'Selbstständiger Unternehmer',
         company: 'Zweckorientiert. Werbe- und Marketingagentur, Osnabrück',
         period: '21.04.2017 - 15.03.2024',
-        details: 'Ausbildungsbetrieb (IHK) seit 2018'
+        details: 'Ausbildungsbetrieb (IHK) seit 2018',
+        tasks: [
+            'Geschäftsführung',
+            'Kundenakquise',
+            'Projektmanagment',
+        ]
     },
     {
         position: 'Gründungsphase Agentur',
@@ -89,13 +94,21 @@ const experienceData = [
         position: 'Mediengestalter Bild & Ton',
         company: 'Agentur 11XI, Werbeagentur, Bielefeld',
         period: '01.07.2015 - 31.12.2016',
-        details: 'Videoproduktion, Sounddesign, Audiodesign'
+        tasks: [
+            'Videoproduktion',
+            'Sounddesign',
+            'Audiodesign',
+        ]    
     },
     {
         position: 'Leitender Angestellter Fachmann für Systemgastronomie',
         company: 'Systemgastronomie Christian Eckstein GmbH & Co. KG, McDonald´s Deutschland, Osnabrück',
         period: '01.02.2009 - 30.06.2015',
-        details: 'Geschäftskorrespondenz, Kundenbetreuung & Beschwerdemanagement, Umsatz- und Personalplanung, Koordination der Warenwirtschaft'
+        tasks: [
+            'Geschäftskorrespondenz', 
+            'Kundenbetreuung & Beschwerdemanagement', 
+            'Umsatz- und Personalplanung, Koordination der Warenwirtschaft',
+        ]    
     },
     {
         position: 'Angestellt bei',
