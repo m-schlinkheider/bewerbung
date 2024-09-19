@@ -209,14 +209,6 @@ a:hover {
     font-size: 14px;
 }
 
-/* Responsives Design */
-@media (min-width: 768px) {
-    .bottom-nav {
-        position: fixed;
-        bottom: 50px; /* Platz für den Kontaktstreifen */
-    }
-}
-
 /* Zentrierte Überschrift und Liste für Persönliche Stärken */
 .centered {
     text-align: left;
@@ -270,18 +262,6 @@ a:hover {
 .skill-column li .material-icons {
     margin-right: 5px;
     color: #007BFF;
-}
-
-/* Responsive Anpassung */
-@media (max-width: 768px) {
-    .skills-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .skill-column {
-        margin: 10px 0;
-    }
 }
 
 /* Persönliche Stärken und Profilbild nebeneinander */
@@ -359,22 +339,6 @@ a:hover {
 .skill-column li:hover, .strengths-list li:hover {
     color: #007BFF;
     cursor: default;
-}
-
-/* Anpassungen für die Skills-Container */
-.skills-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-top: 20px;
-    animation: fadeIn 1s ease-in-out;
-}
-
-.skill-column {
-    flex: 1;
-    min-width: 250px;
-    margin: 10px;
-    animation: fadeInUp 1s ease-in-out;
 }
 
 /* Projektkarte */
