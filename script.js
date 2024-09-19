@@ -129,12 +129,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Funktionen zum Initialisieren der Akkordeon-Funktionalität
 function initAccordions() {
-    const accordions = document.querySelectorAll('.tab-content.active .accordion');
-    accordions.forEach(function(accordion) {
-        // Verhindern, dass Event Listener mehrfach hinzugefügt werden
-        if (!accordion.classList.contains('listener-added')) {
-            accordion.addEventListener('click', function() {
-            this.classList.toggle('active');
+    document.addEventListener('click', function(event) {
+        if (event.target.classList.contains('accordion')) {
+            event.target.classList.toggle('active');
 
             const panel = this.nextElementSibling;
             if (panel.style.maxHeight) {
@@ -142,9 +139,6 @@ function initAccordions() {
             } else {
                 panel.style.maxHeight = panel.scrollHeight + "px";
             }
-        });
-        // Markiere das Akkordeon als mit Listener versehen
-        accordion.classList.add('listener-added');
         }
     });
 }
