@@ -188,13 +188,16 @@ const projectsData = [
         title: 'Projekt 1: Automatisierung für die Auswertung von Umfragen aus LimeSurvey',
         description: 'Dieses Projekt bietet eine vollständige Automatisierungslösung zur Auswertung von Umfragen, die mit LimeSurvey durchgeführt wurden.',
         details: 'Die Lösung umfasst Module und Skripte für die Datenextraktion, -verarbeitung, -aggregation und -darstellung.',
-        technologies: ['Codierung', 'Python', 'Künstliche Intelligenz', 'Open Source Software', 'Projektmanagement', 'HTML', 'CSS', 'JavaScript', 'ChatGPT']
+        technologies: ['Codierung', 'Python', 'Künstliche Intelligenz', 'Open Source Software', 'Projektmanagement', 'HTML', 'CSS', 'JavaScript', 'ChatGPT'],
+        image: 'assets/projekte/automat.webp', // Pfad zum Bild
+        link: 'https://umfrage.resilientfutures.science/index.php/255946?lang=de'
     },
     {
-        title: 'Projekt 2: Suchfunktion für mehrsprachige Webseite',
+        title: 'Suchfunktion für mehrsprachige Webseite',
         description: 'Implementierung einer leistungsstarken Suchfunktion für eine mehrsprachige Webseite, die in sieben Sprachen angeboten wird und über einen statischen Seitengenerator läuft.',
         details: 'Die Suchfunktion verbessert die Benutzerfreundlichkeit und Zugänglichkeit der Webseite erheblich und optimiert die digitale Kundenerfahrung.',
-        technologies: ['JSON', 'JavaScript', 'CSS', 'Stylus', 'Analytische Fähigkeiten', 'PugJS', 'HTML', 'Algorithmen', 'Künstliche Intelligenz', 'Projektplanung', 'Codierung', 'ChatGPT']
+        technologies: ['JSON', 'JavaScript', 'CSS', 'Stylus', 'Analytische Fähigkeiten', 'PugJS', 'HTML', 'Algorithmen', 'Künstliche Intelligenz', 'Projektplanung', 'Codierung', 'ChatGPT'],
+        image: 'assets/projekte/projekt2.jpg' // Pfad zum Bild
     },
     // Weitere Projekte hinzufügen
 ];

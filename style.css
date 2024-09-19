@@ -517,6 +517,28 @@ footer {
     color: #333;
 }
 
+.project-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.project-card .project-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.project-card .project-link:hover {
+    background-color: #0056b3;
+}
+
 /* Responsive Anpassungen */
 @media (max-width: 992px) {
     .project-card {

@@ -242,16 +242,18 @@ function generateProjectsSection(projects) {
     projects.forEach(project => {
         html += `
             <div class="project-card">
+                ${project.image ? `<img src="${project.image}" alt="${project.title}">` : ''}
                 <h4>${project.title}</h4>
                 <p>${project.description}</p>
                 ${project.details ? `<p><strong>Details:</strong> ${project.details}</p>` : ''}
                 ${project.technologies && project.technologies.length > 0 ? `
                     <p><strong>Technologien:</strong> ${project.technologies.join(', ')}</p>
                 ` : ''}
+                ${project.link ? `<a href="${project.link}" target="_blank" class="project-link">Mehr erfahren</a>` : ''}
             </div>
         `;
     });
     html += '</div>';
-    
+
     return html;
 }
