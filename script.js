@@ -138,6 +138,7 @@ function initAccordions() {
         });
     });
 }
+
 // Funktionen zum Generieren der Inhalte
 function generateSkillsSection(skills) {
     let html = '';
