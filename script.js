@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 break;
             case 'faehigkeiten':
                 sectionContent = `
-                    <section>
+                    <section id="faehigkeiten">
                         ${generateSkillsSection(skillsData)}
                     </section>
                 `;
