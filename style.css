@@ -9,7 +9,7 @@ body {
 }
 
 .content {
-    padding-bottom: 70px; /* Platz für die untere Navigationsleiste */
+    padding-bottom: 130px; /* Platz für die untere Navigationsleiste und den Kontaktstreifen */
 }
 
 .tab-content {
@@ -51,11 +51,12 @@ ul {
 
 .bottom-nav {
     position: fixed;
-    bottom: 0;
+    bottom: 50px; /* Platz für den Kontaktstreifen */
     width: 100%;
     background-color: #ffffff;
     border-top: 1px solid #e0e0e0;
     box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
 }
 
 .bottom-nav ul {
@@ -92,21 +93,38 @@ ul {
 }
 
 footer {
-    padding: 20px;
-    text-align: center;
-    background-color: #f5f5f5;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #ffffff;
+    border-top: 1px solid #e0e0e0;
+    padding: 10px 0;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+    flex-wrap: wrap;
 }
 
 .contact-info p {
-    margin: 5px 0;
+    margin: 5px;
+    font-size: 14px;
 }
 
 .contact-info a {
     color: #007BFF;
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 .contact-info a:hover {
+    color: #0056b3; /* Dunklere Farbe beim Hover */
     text-decoration: underline;
 }
 
@@ -191,8 +209,7 @@ a:hover {
 @media (min-width: 768px) {
     .bottom-nav {
         position: fixed;
-        bottom: 0;
-        width: 100%;
+        bottom: 50px; /* Platz für den Kontaktstreifen */
     }
 }
 
@@ -212,6 +229,7 @@ a:hover {
     flex-wrap: wrap;
     justify-content: space-between;
     margin-top: 20px;
+    animation: fadeIn 1s ease-in-out;
 }
 
 /* Spalten für die Fähigkeiten */
@@ -222,6 +240,7 @@ a:hover {
     background-color: #f9f9f9;
     padding: 15px;
     border-radius: 5px;
+    animation: fadeInUp 1s ease-in-out;
 }
 
 /* Überschriften der Fähigkeiten */
@@ -248,7 +267,6 @@ a:hover {
     margin-right: 5px;
     color: #007BFF;
 }
-
 
 /* Responsive Anpassung */
 @media (max-width: 768px) {
@@ -318,6 +336,17 @@ a:hover {
     }
 }
 
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* Übergänge für Hover-Effekte */
 .skill-column li, .strengths-list li {
     transition: color 0.3s ease;
@@ -344,151 +373,6 @@ a:hover {
     animation: fadeInUp 1s ease-in-out;
 }
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20%);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Responsive Anpassung */
-@media (max-width: 768px) {
-    .personal-strengths-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .profile-image {
-        margin-left: 0;
-        margin-top: 20px;
-    }
-}
-
-.icon {
-    font-size: 16px;
-    vertical-align: middle;
-    margin-right: 5px;
-    color: #007BFF;
-}
-
-/* Styling für den Download-Button */
-.download-button {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 20px;
-    background-color: #007BFF;
-    color: #fff;
-    text-decoration: none;
-    font-size: 16px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.download-button:hover {
-    background-color: #0056b3;
-}
-
-/* Kontaktinformationen als schmaler Streifen fix unter dem Menü */
-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: #ffffff;
-    border-top: 1px solid #e0e0e0;
-    padding: 10px 0;
-    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
-    z-index: 1000;
-}
-
-.contact-info {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    max-width: 800px;
-    margin: 0 auto;
-    flex-wrap: wrap;
-}
-
-.contact-info p {
-    margin: 5px;
-    font-size: 14px;
-}
-
-.contact-info a {
-    color: #007BFF;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.contact-info a:hover {
-    color: #0056b3; /* Dunklere Farbe beim Hover */
-    text-decoration: underline;
-}
-
-/* Anpassungen für die untere Navigationsleiste */
-.bottom-nav {
-    position: fixed;
-    bottom: 50px; /* Platz für den Kontaktstreifen */
-    width: 100%;
-    background-color: #ffffff;
-    border-top: 1px solid #e0e0e0;
-    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
-    z-index: 1000;
-}
-
-/* Anpassung des Inhaltsbereichs */
-.content {
-    padding-bottom: 130px; /* Platz für die Navigationsleiste und den Kontaktstreifen */
-}
-
-/* Responsive Anpassung für Kontaktinformationen */
-@media (max-width: 600px) {
-    .contact-info {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .bottom-nav {
-        bottom: 60px; /* Anpassen je nach Höhe des Kontaktstreifens auf kleinen Bildschirmen */
-    }
-}
-
-.accordion::after {
-    content: '\002B'; /* Pluszeichen */
-    font-size: 20px;
-    color: #777;
-}
-
-.accordion.active::after {
-    content: '\2212'; /* Minuszeichen */
-}
-
-/* Projekte Kategorie-Stile */
-.project-category {
-    margin-bottom: 40px;
-}
-
-.project-category h3 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-/* Projekte Container */
-.projects-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-    justify-content: center; /* Zentriert die Karten */
-    padding: 20px; /* Innenabstand für den Container */
-    max-width: 1200px; /* Maximale Breite des Containers */
-    margin: 0 auto; /* Zentriert den Container auf der Seite */
-}
-
 /* Projektkarte */
 .project-card {
     display: flex;
@@ -508,22 +392,6 @@ footer {
 .project-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-
-.project-card h4 {
-    font-size: 20px;
-    margin-bottom: 10px;
-    color: #007BFF;
-}
-
-.project-card p {
-    font-size: 16px;
-    color: #555;
-    margin-bottom: 10px;
-}
-
-.project-card p strong {
-    color: #333;
 }
 
 .project-card img {
