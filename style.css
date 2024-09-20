@@ -53,6 +53,74 @@ ul {
     padding: 0;
 }
 
+/* Hamburger Menü Stil */
+.hamburger-menu {
+    display: none; /* Standardmäßig ausgeblendet */
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1100; /* Über der seitlichen Navigation */
+    cursor: pointer;
+}
+
+.hamburger-menu .material-icons {
+    font-size: 32px;
+    color: #333;
+}
+
+/* Seitliches Menü Stil */
+.side-nav {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: -250px; /* Versteckt das Menü standardmäßig */
+    background-color: #ffffff;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    z-index: 1050;
+    transition: left 0.3s ease;
+    padding-top: 60px; /* Platz für den Schließen-Button */
+}
+
+.side-nav ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.side-nav li {
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: #888;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.side-nav li:hover, .side-nav li.active {
+    background-color: #f1f1f1;
+    color: #007BFF;
+}
+
+.side-nav li .material-icons {
+    margin-right: 10px;
+    font-size: 24px;
+}
+
+.side-nav li .tab-label {
+    font-size: 16px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 32px;
+    cursor: pointer;
+    color: #333;
+}
+
+/* Untere Navigationsleiste Stil */
 .bottom-nav {
     position: fixed;
     bottom: 50px; /* Platz für den Kontaktstreifen */
@@ -131,7 +199,7 @@ ul {
     }
 
     .bottom-nav li .tab-label {
-        font-size: 140.875rem; /* Größere Beschriftungen *//* 14px bei Standard-Schriftgröße */
+        font-size: 0.875rem; /* Größere Beschriftungen *//* 14px bei Standard-Schriftgröße */
     }
 }
 

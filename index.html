@@ -12,6 +12,56 @@
 </head>
 <body>
 
+    <!-- Hamburger Menü für mobile Geräte -->
+    <div class="hamburger-menu">
+        <span class="material-icons" id="hamburger-icon">menu</span>
+    </div>
+
+    <!-- Seitliches Menü -->
+    <nav class="side-nav" id="side-nav">
+        <span class="material-icons close-btn" id="close-btn">close</span>
+        <ul>
+            <li class="active" data-tab="start">
+                <span class="material-icons">home</span>
+                <span class="tab-label">Start</span>
+            </li>
+            <li data-tab="profil">
+                <span class="material-icons">person</span>
+                <span class="tab-label">Profil</span>
+            </li>
+            <li data-tab="projekte">
+                <span class="material-icons">work</span>
+                <span class="tab-label">Projekte</span>
+            </li>
+            <li data-tab="kontakt">
+                <span class="material-icons">contact_mail</span>
+                <span class="tab-label">Kontakt</span>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Untere Navigationsleiste für größere Bildschirme -->
+    <nav class="bottom-nav">
+        <ul id="nav-tabs">
+            <li class="active" data-tab="start">
+                <span class="material-icons">home</span>
+                <span class="tab-label">Start</span>
+            </li>
+            <li data-tab="profil">
+                <span class="material-icons">person</span>
+                <span class="tab-label">Profil</span>
+            </li>
+            <li data-tab="projekte">
+                <span class="material-icons">work</span>
+                <span class="tab-label">Projekte</span>
+            </li>
+            <li data-tab="kontakt">
+                <span class="material-icons">contact_mail</span>
+                <span class="tab-label">Kontakt</span>
+            </li>
+        </ul>
+    </nav>    
+
     <!-- Inhalte -->
     <div class="content">
         <!-- Die Tab-Inhalte werden dynamisch durch JavaScript generiert -->

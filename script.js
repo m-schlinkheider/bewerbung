@@ -293,3 +293,50 @@ function generateProjectsSection(projects) {
 
     return html;
 }
+
+// Hamburger Menü
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburgerIcon = document.getElementById('hamburger-icon');
+    const sideNav = document.getElementById('side-nav');
+    const closeBtn = document.getElementById('close-btn');
+    const navTabs = document.querySelectorAll('.side-nav li, .bottom-nav li');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    // Öffnen des seitlichen Menüs
+    hamburgerIcon.addEventListener('click', function() {
+        sideNav.classList.add('active');
+    });
+
+    // Schließen des seitlichen Menüs
+    closeBtn.addEventListener('click', function() {
+        sideNav.classList.remove('active');
+    });
+
+    // Navigationsfunktion für beide Menüs
+    navTabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            // Entferne 'active' von allen Tabs
+            navTabs.forEach(t => t.classList.remove('active'));
+            // Füge 'active' zum geklickten Tab hinzu
+            this.classList.add('active');
+
+            // Verstecke alle Tab-Inhalte
+            tabContents.forEach(content => content.classList.remove('active'));
+            // Zeige den entsprechenden Tab-Inhalt
+            const tabId = this.getAttribute('data-tab');
+            document.getElementById(tabId).classList.add('active');
+
+            // Schließe das seitliche Menü nach dem Klicken (nur für mobile Geräte)
+            if (window.innerWidth <= 767) {
+                sideNav.classList.remove('active');
+            }
+        });
+    });
+
+    // Optional: Schließen des Menüs beim Klicken außerhalb des Menüs
+    window.addEventListener('click', function(event) {
+        if (!sideNav.contains(event.target) && !hamburgerIcon.contains(event.target)) {
+            sideNav.classList.remove('active');
+        }
+    });
+});
