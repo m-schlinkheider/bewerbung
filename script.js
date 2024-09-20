@@ -87,6 +87,113 @@ document.addEventListener('DOMContentLoaded', function() {
         contentDiv.appendChild(tabContent);
     });
 
+// Funktion zum Generieren der Navigations-Tabs
+function generateNavigation() {
+    const bottomNavTabs = document.getElementById('nav-tabs');
+    const sideNavTabs = document.getElementById('side-nav-tabs');
+
+    navigationData.forEach((navItem, index) => {
+        // Erstellen des Listen-Elements für die untere Navigation
+        const bottomLi = document.createElement('li');
+        bottomLi.setAttribute('data-tab', navItem.tabId);
+        bottomLi.setAttribute('role', 'tab');
+        if (index === 0) bottomLi.classList.add('active');
+
+        const bottomIcon = document.createElement('span');
+        bottomIcon.classList.add('material-icons');
+        bottomIcon.textContent = navItem.icon;
+
+        const bottomLabel = document.createElement('span');
+        bottomLabel.classList.add('tab-label');
+        bottomLabel.textContent = navItem.label;
+
+        bottomLi.appendChild(bottomIcon);
+        bottomLi.appendChild(bottomLabel);
+        bottomNavTabs.appendChild(bottomLi);
+
+        // Erstellen des Listen-Elements für das seitliche Menü
+        const sideLi = document.createElement('li');
+        sideLi.setAttribute('data-tab', navItem.tabId);
+        sideLi.setAttribute('role', 'tab');
+        if (index === 0) sideLi.classList.add('active');
+
+        const sideIcon = document.createElement('span');
+        sideIcon.classList.add('material-icons');
+        sideIcon.textContent = navItem.icon;
+
+        const sideLabel = document.createElement('span');
+        sideLabel.classList.add('tab-label');
+        sideLabel.textContent = navItem.label;
+
+        sideLi.appendChild(sideIcon);
+        sideLi.appendChild(sideLabel);
+        sideNavTabs.appendChild(sideLi);
+    });
+}
+
+// Funktion zur Steuerung der Tabs
+function setupTabs() {
+    const allNavTabs = document.querySelectorAll('.bottom-nav li, .side-nav li');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    allNavTabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            // Entferne 'active' von allen Tabs
+            allNavTabs.forEach(t => t.classList.remove('active'));
+            // Füge 'active' zum geklickten Tab hinzu
+            this.classList.add('active');
+
+            // Verstecke alle Tab-Inhalte
+            tabContents.forEach(content => content.classList.remove('active'));
+            // Zeige den entsprechenden Tab-Inhalt
+            const tabId = this.getAttribute('data-tab');
+            document.getElementById(tabId).classList.add('active');
+
+            // Schließe das seitliche Menü nach dem Klicken (nur für mobile Geräte)
+            if (window.innerWidth <= 767) {
+                sideNav.classList.remove('active');
+                overlay.classList.remove('active');
+            }
+        });
+    });
+}
+
+// Funktion zum Einrichten des Hamburger-Menüs
+function setupHamburgerMenu() {
+    const hamburgerIcon = document.getElementById('hamburger-icon');
+    const sideNav = document.getElementById('side-nav');
+    const closeBtn = document.getElementById('close-btn');
+    const overlay = document.createElement('div');
+    overlay.classList.add('overlay');
+    overlay.id = 'overlay';
+    document.body.appendChild(overlay);
+
+    // Öffnen des seitlichen Menüs
+    hamburgerIcon.addEventListener('click', function() {
+        sideNav.classList.add('active');
+        overlay.classList.add('active');
+    });
+
+    // Schließen des seitlichen Menüs
+    closeBtn.addEventListener('click', function() {
+        sideNav.classList.remove('active');
+        overlay.classList.remove('active');
+    });
+
+    // Schließen des Menüs beim Klicken auf die Überlagerung
+    overlay.addEventListener('click', function() {
+        sideNav.classList.remove('active');
+        overlay.classList.remove('active');
+    });
+}
+
+// Initialisierung
+document.addEventListener('DOMContentLoaded', function() {
+    generateNavigation();
+    setupTabs();
+    setupHamburgerMenu();
+});    
+
     // Kontaktinformationen
     const contactInfoDiv = document.querySelector('.contact-info');
     contactInfoDiv.innerHTML = `

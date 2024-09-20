@@ -155,7 +155,7 @@ ul {
     background-color: #ffffff;
     border-top: 1px solid #e0e0e0;
     box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
-    z-index: 1001; /* Höher als der Footer */
+    z-index: 1000; /* Höher als der Footer */
     height: 70px; /* Gesamthöhe der Navigationsleiste */
     padding: 0; /* Entfernt zusätzliches Padding */
 }
