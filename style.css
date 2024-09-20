@@ -55,7 +55,7 @@ ul {
 
 .bottom-nav {
     position: fixed;
-    bottom: 60px; /* Platz für den Kontaktstreifen */
+    bottom: 50px; /* Platz für den Kontaktstreifen */
     width: 100%;
     background-color: #ffffff;
     border-top: 1px solid #e0e0e0;
@@ -63,7 +63,7 @@ ul {
     z-index: 1001; /* Höher als der Footer */
     height: 70px; /* Gesamthöhe der Navigationsleiste */
     padding: 0; /* Entfernt zusätzliches Padding */
-    z-index: 1001; /* Höher als der Footer */
+    z-index: 1000; /* Höher als der Footer */
     height: 70px; /* Gesamthöhe der Navigationsleiste */
     padding: 0; /* Entfernt zusätzliches Padding */
 }
@@ -71,7 +71,7 @@ ul {
 .bottom-nav ul {
     display: flex;
     justify-content: space-around;
-    align-items: center; /* Vertikale Zentrierung */
+    align-items: flex-end; /* Vertikale Zentrierung */
     height: 100%; /* Höhe des Containers */
     /* gap: 10px; /* Abstand zwischen den Navigationselementen */
 }
@@ -80,7 +80,7 @@ ul {
     list-style: none;
     flex-grow: 1;
     text-align: center;
-    padding: 15px 0; /* Mehr Padding für größere Touch-Ziele */
+    padding: 20px 0; /* Mehr Padding für größere Touch-Ziele */
     cursor: pointer;
     color: #888;
     transition: color 0.3s ease, background-color 0.3s ease;
