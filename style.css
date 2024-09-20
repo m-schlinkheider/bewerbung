@@ -63,6 +63,9 @@ ul {
     z-index: 1001; /* Höher als der Footer */
     height: 70px; /* Gesamthöhe der Navigationsleiste */
     padding: 0; /* Entfernt zusätzliches Padding */
+    z-index: 1001; /* Höher als der Footer */
+    height: 70px; /* Gesamthöhe der Navigationsleiste */
+    padding: 0; /* Entfernt zusätzliches Padding */
 }
 
 .bottom-nav ul {
@@ -90,6 +93,7 @@ ul {
 
 .bottom-nav li:hover, .bottom-nav li:focus {
     color: #0056b3;
+    background-color: rgba(0, 123, 255, 0.1); /* Leichter Hintergrund beim Hover/Fokus */
 }
 
 .bottom-nav li.active {
