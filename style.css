@@ -120,6 +120,33 @@ ul {
     color: #333;
 }
 
+/* Responsive Anpassungen */
+
+/* Sichtbar auf mobilen Geräten */
+@media (max-width: 767px) {
+    .bottom-nav {
+        display: none; /* Versteckt die untere Navigation auf mobilen Geräten */
+    }
+
+    .hamburger-menu {
+        display: block; /* Zeigt das Hamburger-Symbol auf mobilen Geräten */
+    }
+
+    .side-nav.active {
+        left: 0; /* Zeigt das seitliche Menü */
+    }
+
+    /* Größere Icons und Beschriftungen für seitliches Menü */
+    .side-nav li .material-icons {
+        font-size: 1.75rem; /* 28px bei Standard-Schriftgröße */
+    }
+
+    .side-nav li .tab-label {
+        font-size: 0.875rem; /* 14px bei Standard-Schriftgröße */
+    }
+}
+
+
 /* Untere Navigationsleiste Stil */
 .bottom-nav {
     position: fixed;
@@ -129,9 +156,6 @@ ul {
     border-top: 1px solid #e0e0e0;
     box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
     z-index: 1001; /* Höher als der Footer */
-    height: 70px; /* Gesamthöhe der Navigationsleiste */
-    padding: 0; /* Entfernt zusätzliches Padding */
-    z-index: 1000; /* Höher als der Footer */
     height: 70px; /* Gesamthöhe der Navigationsleiste */
     padding: 0; /* Entfernt zusätzliches Padding */
 }
@@ -175,7 +199,7 @@ ul {
 }
 
 .bottom-nav li .tab-label {
-    font-size: 12px;
+    font-size: 0.875rem; /* 14px bei Standard-Schriftgröße */
     transition: font-size 0.3s ease;
 }
 
