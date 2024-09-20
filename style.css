@@ -93,7 +93,6 @@ ul {
 
 .bottom-nav li:hover, .bottom-nav li:focus {
     color: #0056b3;
-    background-color: rgba(0, 123, 255, 0.1); /* Leichter Hintergrund beim Hover/Fokus */
 }
 
 .bottom-nav li.active {
