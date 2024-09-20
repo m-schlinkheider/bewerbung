@@ -13,7 +13,7 @@ body {
 }
 
 .content {
-    padding-bottom: 130px; /* Platz für die untere Navigationsleiste und den Kontaktstreifen */
+    padding-bottom: 160px; /* Platz für die untere Navigationsleiste und den Kontaktstreifen */
 }
 
 .tab-content {
@@ -55,47 +55,95 @@ ul {
 
 .bottom-nav {
     position: fixed;
-    bottom: 50px; /* Platz für den Kontaktstreifen */
+    bottom: 60px; /* Platz für den Kontaktstreifen */
     width: 100%;
     background-color: #ffffff;
     border-top: 1px solid #e0e0e0;
     box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
-    z-index: 1000;
+    z-index: 1001; /* Höher als der Footer */
+    height: 70px; /* Gesamthöhe der Navigationsleiste */
+    padding: 0; /* Entfernt zusätzliches Padding */
 }
 
 .bottom-nav ul {
     display: flex;
     justify-content: space-around;
-    margin: 0;
-    padding: 0;
+    align-items: center; /* Vertikale Zentrierung */
+    height: 100%; /* Höhe des Containers */
+    /* gap: 10px; /* Abstand zwischen den Navigationselementen */
 }
 
 .bottom-nav li {
     list-style: none;
     flex-grow: 1;
     text-align: center;
-    padding: 10px 0;
+    padding: 15px 0; /* Mehr Padding für größere Touch-Ziele */
     cursor: pointer;
     color: #888;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    min-height: 50px; /* Mindesthöhe für bessere Touch-Ziele */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.bottom-nav li:hover {
+.bottom-nav li:hover, .bottom-nav li:focus {
     color: #0056b3;
 }
 
 .bottom-nav li.active {
     color: #007BFF;
+    font-weight: bold;
 }
 
 .bottom-nav li .material-icons {
     display: block;
     font-size: 24px;
+    transition: font-size 0.3s ease;
 }
 
 .bottom-nav li .tab-label {
     font-size: 12px;
+    transition: font-size 0.3s ease;
 }
 
+.bottom-nav li:focus {
+    outline: 2px solid #007BFF;
+    outline-offset: 2px;
+}
+
+/* Größere Icons und Beschriftungen für mobile Geräte */
+@media (max-width: 767px) {
+    .bottom-nav {
+        padding: 10px 0; /* Erhöht den Innenabstand */
+    }
+
+    .bottom-nav li {
+        padding: 15px 0; /* Erhöht die Klickfläche */
+    }
+
+    .bottom-nav li .material-icons {
+        font-size: 1.75rem; /* Größere Icons *//* 28px bei Standard-Schriftgröße */
+    }
+
+    .bottom-nav li .tab-label {
+        font-size: 140.875rem; /* Größere Beschriftungen *//* 14px bei Standard-Schriftgröße */
+    }
+}
+
+/* Zusätzliche Media Queries für Tablets und größere Bildschirme */
+@media (min-width: 1024px) {
+    .bottom-nav li .material-icons {
+        font-size: 1.5rem; /* 24px */
+    }
+
+    .bottom-nav li .tab-label {
+        font-size: 1rem; /* 16px */
+    }
+}
+
+/* Footer */
 footer {
     position: fixed;
     bottom: 0;
