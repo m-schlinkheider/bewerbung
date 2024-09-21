@@ -15,21 +15,11 @@ document.addEventListener('DOMContentLoaded', function() {
     ];
 
     const contentDiv = document.querySelector('.content');
-    const navTabs = document.getElementById('nav-tabs');
+    const navTabsBottom = document.getElementById('nav-tabs');
+    const navTabsSide = document.getElementById('side-nav-tabs');
 
-    tabs.forEach((tab, index) => {
-        // Navigation Tabs erstellen
-        const navItem = document.createElement('li');
-        navItem.classList.add('tab-link');
-        if (index === 0) navItem.classList.add('active');
-        navItem.setAttribute('data-tab', tab.id);
-        navItem.innerHTML = `
-            <span class="material-icons">${tab.icon}</span>
-            <span class="tab-label">${tab.label}</span>
-        `;
-        navTabs.appendChild(navItem);
-
-        // Tab-Inhalte erstellen
+    // Funktion zum Generieren der Tab-Inhalte
+    function generateTabContent(tab, index) {
         const tabContent = document.createElement('div');
         tabContent.classList.add('tab-content');
         if (index === 0) tabContent.classList.add('active');
@@ -75,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 break;
             case 'projekte':
                 sectionContent = `
-                    <section>
+                    <section id="projekte">
                         <h2>Projekte</h2>
                         ${generateProjectsSection(projectsData)}
                     </section>
@@ -85,122 +75,110 @@ document.addEventListener('DOMContentLoaded', function() {
 
         tabContent.innerHTML = sectionContent;
         contentDiv.appendChild(tabContent);
+    }
+
+    // Generieren der Tab-Inhalte
+    tabs.forEach((tab, index) => {
+        generateTabContent(tab, index);
     });
 
-    const navigationData = [
-        { tabId: 'profil', label: 'Profil', icon: 'person' },
-        { tabId: 'faehigkeiten', label: 'Fähigkeiten', icon: 'star' },
-        { tabId: 'berufspraxis', label: 'Berufspraxis', icon: 'work' },
-        { tabId: 'bildung', label: 'Bildung', icon: 'school' },
-        { tabId: 'projekte', label: 'Projekte', icon: 'folder' }
-    ];
-    
-// Funktion zum Generieren der Navigations-Tabs
-function generateNavigation() {
-    const bottomNavTabs = document.getElementById('nav-tabs');
-    const sideNavTabs = document.getElementById('side-nav-tabs');
+    // Datenstruktur für die Navigation
+    const navigationData = tabs.map(tab => ({
+        tabId: tab.id,
+        label: tab.label,
+        icon: tab.icon
+    }));
 
-    navigationData.forEach((navItem, index) => {
-        // Erstellen des Listen-Elements für die untere Navigation
-        const bottomLi = document.createElement('li');
-        bottomLi.setAttribute('data-tab', navItem.tabId);
-        bottomLi.setAttribute('role', 'tab');
-        if (index === 0) bottomLi.classList.add('active');
+    // Funktion zum Generieren der Navigations-Tabs für beide Menüs
+    function generateNavigation() {
+        navigationData.forEach((navItem, index) => {
+            // Erstellen des Listen-Elements für die untere Navigation
+            const bottomLi = document.createElement('li');
+            bottomLi.classList.add('tab-link');
+            if (index === 0) bottomLi.classList.add('active');
+            bottomLi.setAttribute('data-tab', navItem.tabId);
+            bottomLi.innerHTML = `
+                <span class="material-icons">${navItem.icon}</span>
+                <span class="tab-label">${navItem.label}</span>
+            `;
+            navTabsBottom.appendChild(bottomLi);
 
-        const bottomIcon = document.createElement('span');
-        bottomIcon.classList.add('material-icons');
-        bottomIcon.textContent = navItem.icon;
-
-        const bottomLabel = document.createElement('span');
-        bottomLabel.classList.add('tab-label');
-        bottomLabel.textContent = navItem.label;
-
-        bottomLi.appendChild(bottomIcon);
-        bottomLi.appendChild(bottomLabel);
-        bottomNavTabs.appendChild(bottomLi);
-
-        // Erstellen des Listen-Elements für das seitliche Menü
-        const sideLi = document.createElement('li');
-        sideLi.setAttribute('data-tab', navItem.tabId);
-        sideLi.setAttribute('role', 'tab');
-        if (index === 0) sideLi.classList.add('active');
-
-        const sideIcon = document.createElement('span');
-        sideIcon.classList.add('material-icons');
-        sideIcon.textContent = navItem.icon;
-
-        const sideLabel = document.createElement('span');
-        sideLabel.classList.add('tab-label');
-        sideLabel.textContent = navItem.label;
-
-        sideLi.appendChild(sideIcon);
-        sideLi.appendChild(sideLabel);
-        sideNavTabs.appendChild(sideLi);
-    });
-}
-
-// Funktion zur Steuerung der Tabs
-function setupTabs() {
-    const allNavTabs = document.querySelectorAll('.bottom-nav li, .side-nav li');
-    const tabContents = document.querySelectorAll('.tab-content');
-
-    allNavTabs.forEach(tab => {
-        tab.addEventListener('click', function() {
-            // Entferne 'active' von allen Tabs
-            allNavTabs.forEach(t => t.classList.remove('active'));
-            // Füge 'active' zum geklickten Tab hinzu
-            this.classList.add('active');
-
-            // Verstecke alle Tab-Inhalte
-            tabContents.forEach(content => content.classList.remove('active'));
-            // Zeige den entsprechenden Tab-Inhalt
-            const tabId = this.getAttribute('data-tab');
-            document.getElementById(tabId).classList.add('active');
-
-            // Schließe das seitliche Menü nach dem Klicken (nur für mobile Geräte)
-            if (window.innerWidth <= 767) {
-                sideNav.classList.remove('active');
-                overlay.classList.remove('active');
-            }
+            // Erstellen des Listen-Elements für das seitliche Menü
+            const sideLi = document.createElement('li');
+            sideLi.classList.add('tab-link');
+            if (index === 0) sideLi.classList.add('active');
+            sideLi.setAttribute('data-tab', navItem.tabId);
+            sideLi.innerHTML = `
+                <span class="material-icons">${navItem.icon}</span>
+                <span class="tab-label">${navItem.label}</span>
+            `;
+            navTabsSide.appendChild(sideLi);
         });
-    });
-}
+    }
 
-// Funktion zum Einrichten des Hamburger-Menüs
-function setupHamburgerMenu() {
-    const hamburgerIcon = document.getElementById('hamburger-icon');
-    const sideNav = document.getElementById('side-nav');
-    const closeBtn = document.getElementById('close-btn');
-    const overlay = document.createElement('div');
-    overlay.classList.add('overlay');
-    overlay.id = 'overlay';
-    document.body.appendChild(overlay);
+    // Funktion zur Steuerung der Tabs
+    function setupTabs() {
+        const allNavTabs = document.querySelectorAll('.bottom-nav li, .side-nav li');
+        const tabContents = document.querySelectorAll('.tab-content');
 
-    // Öffnen des seitlichen Menüs
-    hamburgerIcon.addEventListener('click', function() {
-        sideNav.classList.add('active');
-        overlay.classList.add('active');
-    });
+        allNavTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                // Entferne 'active' von allen Tabs
+                allNavTabs.forEach(t => t.classList.remove('active'));
+                // Füge 'active' zum geklickten Tab hinzu
+                this.classList.add('active');
 
-    // Schließen des seitlichen Menüs
-    closeBtn.addEventListener('click', function() {
-        sideNav.classList.remove('active');
-        overlay.classList.remove('active');
-    });
+                // Verstecke alle Tab-Inhalte
+                tabContents.forEach(content => content.classList.remove('active'));
+                // Zeige den entsprechenden Tab-Inhalt
+                const tabId = this.getAttribute('data-tab');
+                const activeContent = document.getElementById(tabId);
+                if (activeContent) {
+                    activeContent.classList.add('active');
+                }
 
-    // Schließen des Menüs beim Klicken auf die Überlagerung
-    overlay.addEventListener('click', function() {
-        sideNav.classList.remove('active');
-        overlay.classList.remove('active');
-    });
-}
+                // Schließe das seitliche Menü nach dem Klicken (nur für mobile Geräte)
+                if (window.innerWidth <= 767) {
+                    sideNav.classList.remove('active');
+                    overlay.classList.remove('active');
+                }
+            });
+        });
+    }
 
-// Initialisierung
-document.addEventListener('DOMContentLoaded', function() {
-    generateNavigation();
-    setupTabs();
-    setupHamburgerMenu();
-});    
+    // Funktion zum Einrichten des Hamburger-Menüs
+    function setupHamburgerMenu() {
+        const hamburgerIcon = document.getElementById('hamburger-icon');
+        const sideNav = document.getElementById('side-nav');
+        const closeBtn = document.getElementById('close-btn');
+
+        // Überprüfen, ob Overlay bereits existiert
+        let overlay = document.getElementById('overlay');
+        if (!overlay) {
+            overlay = document.createElement('div');
+            overlay.classList.add('overlay');
+            overlay.id = 'overlay';
+            document.body.appendChild(overlay);
+        }
+
+        // Öffnen des seitlichen Menüs
+        hamburgerIcon.addEventListener('click', function() {
+            sideNav.classList.add('active');
+            overlay.classList.add('active');
+        });
+
+        // Schließen des seitlichen Menüs
+        closeBtn.addEventListener('click', function() {
+            sideNav.classList.remove('active');
+            overlay.classList.remove('active');
+        });
+
+        // Schließen des Menüs beim Klicken auf die Überlagerung
+        overlay.addEventListener('click', function() {
+            sideNav.classList.remove('active');
+            overlay.classList.remove('active');
+        });
+    }
 
     // Kontaktinformationen
     const contactInfoDiv = document.querySelector('.contact-info');
@@ -210,35 +188,10 @@ document.addEventListener('DOMContentLoaded', function() {
         <p><strong>LinkedIn:</strong> <a href="${contactData.linkedin}">${personalData.name}</a></p>
     `;
 
-    // Tab-Navigation Funktionalität
-    const tabLinks = document.querySelectorAll('.tab-link');
-    const tabContents = document.querySelectorAll('.tab-content');
-
-    tabLinks.forEach(function(link) {
-        link.addEventListener('click', function() {
-            const tabId = this.getAttribute('data-tab');
-
-            // Entferne 'active' Klasse von allen Links
-            tabLinks.forEach(function(link) {
-                link.classList.remove('active');
-            });
-
-            // Füge 'active' Klasse zum angeklickten Link hinzu
-            this.classList.add('active');
-
-            // Verstecke alle Tab-Inhalte
-            tabContents.forEach(function(content) {
-                content.classList.remove('active');
-            });
-
-            // Zeige den ausgewählten Tab-Inhalt
-            document.getElementById(tabId).classList.add('active');
-
-            // Keine Akkordeon-Initialisierung hier mehr
-        });
-    });
-
-    // Akkordeon-Funktionalität initialisieren
+    // Initialisierung
+    generateNavigation();
+    setupTabs();
+    setupHamburgerMenu();
     initAccordions();
 });
 
@@ -251,15 +204,15 @@ function initAccordions() {
             accordion.addEventListener('click', function() {
                 this.classList.toggle('active');
 
-            const panel = this.nextElementSibling;
-            if (panel.style.maxHeight) {
-                panel.style.maxHeight = null;
-            } else {
-                panel.style.maxHeight = panel.scrollHeight + "px";
-            }
-        });
-        // Markiere das Akkordeon als mit Listener versehen
-        accordion.classList.add('listener-added');
+                const panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+            // Markiere das Akkordeon als mit Listener versehen
+            accordion.classList.add('listener-added');
         }
     });
 }
@@ -284,7 +237,7 @@ function generateSkillsSection(skills) {
                     </ul>
                 </div>
                 <div class="profile-image">
-                    <img src="${personalData.profileImage || 'assets/bild_linkedin.jpg'}" alt="Profilfoto">
+                    <img src="${personalStrengths.profileImage || 'assets/bild_linkedin.jpg'}" alt="Profilfoto">
                 </div>
             </div>
         `;
@@ -373,10 +326,10 @@ function generateProjectsSection(projects) {
                             ${project.details ? `<p><strong>Details:</strong> ${project.details}</p>` : ''}
                             ${project.technologies && project.technologies.length > 0 ? `
                                 <p><strong>Technologien:</strong> ${project.technologies.join(', ')}</p>    
-                        ` : ''}
-                        ${project.link ? `<a href="${project.link}" target="_blank" class="project-link">Zum Projekt</a>` : ''}
-                    </div>
-                </div>    
+                            ` : ''}
+                            ${project.link ? `<a href="${project.link}" target="_blank" class="project-link">Zum Projekt</a>` : ''}
+                        </div>
+                    </div>    
                 `;
             });
             html += `
@@ -399,8 +352,8 @@ function generateProjectsSection(projects) {
                             <p><strong>Technologien:</strong> ${project.technologies.join(', ')}</p>    
                         ` : ''}
                         ${project.link ? `<a href="${project.link}" target="_blank" class="project-link">Zum Projekt</a>` : ''}
-                </div>
-            </div>    
+                    </div>
+                </div>    
             `;
         });
         html += '</div>';
@@ -408,50 +361,3 @@ function generateProjectsSection(projects) {
 
     return html;
 }
-
-// Hamburger Menü
-document.addEventListener('DOMContentLoaded', function() {
-    const hamburgerIcon = document.getElementById('hamburger-icon');
-    const sideNav = document.getElementById('side-nav');
-    const closeBtn = document.getElementById('close-btn');
-    const navTabs = document.querySelectorAll('.side-nav li, .bottom-nav li');
-    const tabContents = document.querySelectorAll('.tab-content');
-
-    // Öffnen des seitlichen Menüs
-    hamburgerIcon.addEventListener('click', function() {
-        sideNav.classList.add('active');
-    });
-
-    // Schließen des seitlichen Menüs
-    closeBtn.addEventListener('click', function() {
-        sideNav.classList.remove('active');
-    });
-
-    // Navigationsfunktion für beide Menüs
-    navTabs.forEach(tab => {
-        tab.addEventListener('click', function() {
-            // Entferne 'active' von allen Tabs
-            navTabs.forEach(t => t.classList.remove('active'));
-            // Füge 'active' zum geklickten Tab hinzu
-            this.classList.add('active');
-
-            // Verstecke alle Tab-Inhalte
-            tabContents.forEach(content => content.classList.remove('active'));
-            // Zeige den entsprechenden Tab-Inhalt
-            const tabId = this.getAttribute('data-tab');
-            document.getElementById(tabId).classList.add('active');
-
-            // Schließe das seitliche Menü nach dem Klicken (nur für mobile Geräte)
-            if (window.innerWidth <= 767) {
-                sideNav.classList.remove('active');
-            }
-        });
-    });
-
-    // Optional: Schließen des Menüs beim Klicken außerhalb des Menüs
-    window.addEventListener('click', function(event) {
-        if (!sideNav.contains(event.target) && !hamburgerIcon.contains(event.target)) {
-            sideNav.classList.remove('active');
-        }
-    });
-});
