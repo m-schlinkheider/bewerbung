@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 sectionContent = `
                     <section id="profil">
                         <h1>${personalData.name}</h1>
-                        <img src="${profileImage}" alt="Profilfoto">
+                        <img src="${profileImage}" alt="Profilfoto" class="profilfoto">
                         <p>${personalData.description}</p>
                         <a href="M-Schlinkheider_Lebenslauf_2024.pdf" class="download-button" download>
                            Lebenslauf herunterladen

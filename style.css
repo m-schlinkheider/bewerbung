@@ -65,6 +65,19 @@ section {
     z-index: 1;
 }
 
+/* Profilfoto spezifische Stile */
+.profilfoto {
+    width: 150px; /* Breite des Bildes anpassen */
+    height: 150px; /* Höhe des Bildes anpassen */
+    border-radius: 50%; /* Macht das Bild rund */
+    border: 3px solid white; /* Weißer, schmaler Rahmen */
+    object-fit: cover; /* Stellt sicher, dass das Bild den gesamten Container ausfüllt */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Optional: Fügt einen leichten Schatten hinzu */
+    margin: 20px auto; /* Zentriert das Bild innerhalb des Containers */
+    display: block; /* Block-Element für Zentrierung */
+}
+
+
 #profil img {
     border-radius: 50%;
     width: 200px;
@@ -189,6 +202,20 @@ ul {
 
     .side-nav li .tab-label {
         font-size: 0.875rem; /* 14px bei Standard-Schriftgröße */
+    }
+
+    /* Anpassungen für das Profil-Tab auf mobilen Geräten */
+    #profil {
+        background-size: contain; /* Passt das Bild an, ohne es zu skalieren */
+        background-position: top center; /* Positioniert das Bild oben zentriert */
+    }
+
+    /* Responsive Anpassungen für Profilfoto */
+    .profilfoto {
+        width: 100px; /* Kleinere Breite auf mobilen Geräten */
+        height: 100px; /* Kleinere Höhe auf mobilen Geräten */
+        border: 2px solid white; /* Dünnerer Rahmen auf mobilen Geräten */
+        margin: 15px auto; /* Angepasster vertikaler Abstand */
     }
 }
 
