@@ -87,6 +87,14 @@ document.addEventListener('DOMContentLoaded', function() {
         contentDiv.appendChild(tabContent);
     });
 
+    const navigationData = [
+        { tabId: 'profil', label: 'Profil', icon: 'person' },
+        { tabId: 'faehigkeiten', label: 'Fähigkeiten', icon: 'star' },
+        { tabId: 'berufspraxis', label: 'Berufspraxis', icon: 'work' },
+        { tabId: 'bildung', label: 'Bildung', icon: 'school' },
+        { tabId: 'projekte', label: 'Projekte', icon: 'folder' }
+    ];
+    
 // Funktion zum Generieren der Navigations-Tabs
 function generateNavigation() {
     const bottomNavTabs = document.getElementById('nav-tabs');
