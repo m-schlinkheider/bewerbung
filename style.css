@@ -55,6 +55,11 @@ body {
     text-align: center;
 }
 
+/* Sicherstellen, dass der Profil-Tab versteckt ist, wenn nicht aktiv */
+#profil.tab-content {
+    display: none;
+}
+
 /* Container für das Profil-Inhalt */
 .profil-container {
     max-width: 800px; /* Maximale Breite des Inhalts */
