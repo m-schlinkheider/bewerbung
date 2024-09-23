@@ -53,18 +53,6 @@ section {
     text-align: center;
 }
 
-/* Hintergrund-Overlay für bessere Lesbarkeit */
-#profil::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Halbtransparente schwarze Überlagerung */
-    z-index: -1; /* Hinter dem Inhalt */
-}
-
 /* Container für das Profil-Inhalt */
 .profil-container {
     max-width: 800px; /* Maximale Breite des Inhalts */
