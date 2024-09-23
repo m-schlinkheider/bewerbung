@@ -96,8 +96,8 @@ section {
 
 /* Profilfoto spezifische Stile */
 .profilfoto {
-    width: 150px; /* Breite des Bildes anpassen */
-    height: 150px; /* Höhe des Bildes anpassen */
+    width: 200px; /* Breite des Bildes anpassen */
+    height: 200px; /* Höhe des Bildes anpassen */
     border-radius: 50%; /* Macht das Bild rund */
     border: 3px solid white; /* Weißer, schmaler Rahmen */
     object-fit: cover; /* Stellt sicher, dass das Bild den gesamten Container ausfüllt */
