@@ -36,38 +36,25 @@ section {
     margin-bottom: 30px;
 }
 
-/* Profil-Tab spezifische Stile */
 #profil {
     background-image: url('assets/Marcel_Hintergrund.jpg'); /* Pfad zum Hintergrundbild */
-    background-position: center center; /* Zentriert das Bild horizontal und vertikal */
+    background-position: center; /* Zentriert das Bild */
     background-repeat: no-repeat; /* Verhindert das Wiederholen des Bildes */
-    background-size: cover; /* Skaliert das Bild, um den gesamten Container zu bedecken */
-    background-attachment: fixed; /* Fixiert das Hintergrundbild beim Scrollen */
+    background-size: auto; /* Skaliert das Bild, um den gesamten Container zu bedecken */
+    background-attachment: fixed; /* Optional: Fixiert das Hintergrundbild beim Scrollen */
     color: white; /* Setzt die Textfarbe auf Weiß */
     padding: 20px; /* Innenabstand für besseren Textabstand */
     min-height: 100vh; /* Mindesthöhe des Tabs */
     box-sizing: border-box; /* Padding in der Gesamthöhe enthalten */
     position: relative; /* Für das Overlay */
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    z-index: 1; /* Sicherstellen, dass der Inhalt über dem Overlay liegt */
 }
 
-/* Hintergrund-Overlay für bessere Lesbarkeit */
-#profil::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Halbtransparente schwarze Überlagerung */
-    z-index: -1; /* Hinter dem Inhalt */
-}
-
-/* Container für den Profil-Inhalt */
+/* Container für das Profil-Inhalt */
 .profil-container {
     max-width: 800px; /* Maximale Breite des Inhalts */
     width: 100%; /* Volle Breite innerhalb des Containers */
@@ -76,7 +63,6 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
 }
 
 /* Überschriften und Texte */
@@ -91,6 +77,7 @@ section {
     margin-bottom: 20px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Textschatten */
 }
+
 
 /* Zusätzliche Stile für Textelemente im Profil-Tab */
 #profil h1,
@@ -109,40 +96,36 @@ section {
 
 /* Profilfoto spezifische Stile */
 .profilfoto {
-    width: 150px; /* Breite des Bildes anpassen */
-    height: 150px; /* Höhe des Bildes anpassen */
+    width: 200px; /* Breite des Bildes anpassen */
+    height: 200px; /* Höhe des Bildes anpassen */
     border-radius: 50%; /* Macht das Bild rund */
     border: 3px solid white; /* Weißer, schmaler Rahmen */
     object-fit: cover; /* Stellt sicher, dass das Bild den gesamten Container ausfüllt */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Optional: Fügt einen leichten Schatten hinzu */
     margin: 20px auto; /* Zentriert das Bild innerhalb des Containers */
     display: block; /* Block-Element für Zentrierung */
-    transition: transform 0.3s ease; /* Transition für Hover-Effekt */
 }
 
 .profilfoto:hover {
-    transform: scale(1.05); /* Vergrößert das Bild leicht beim Hover */
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
 }
 
-/* Download-Button Stil */
-.download-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #007BFF; /* Blaue Hintergrundfarbe */
-    color: white; /* Weißer Text */
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Leichter Schatten */
-}
+/* #profil img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}*/
 
-.download-button:hover {
-    background-color: #0056b3; /* Dunkleres Blau beim Hover */
+ul {
+    list-style-type: none;
+    padding: 0;
 }
 
 /* Hamburger Menü Stil */
-#hamburger-icon {
+.hamburger-menu {
     display: none; /* Standardmäßig ausgeblendet */
     position: fixed;
     top: 15px;
@@ -151,13 +134,13 @@ section {
     cursor: pointer;
 }
 
-#hamburger-icon .material-icons {
+.hamburger-menu .material-icons {
     font-size: 32px;
     color: #333;
 }
 
 /* Seitliches Menü Stil */
-#side-nav {
+.side-nav {
     height: 100%;
     width: 250px;
     position: fixed;
@@ -171,18 +154,18 @@ section {
     pointer-events: none; /* Deaktiviert Interaktionen, wenn nicht aktiv */
 }
 
-#side-nav.active {
+.side-nav.active {
     left: 0; /* Zeigt das seitliche Menü */
     pointer-events: auto; /* Aktiviert Interaktionen, wenn aktiv */
 }
 
-#side-nav ul {
+.side-nav ul {
     padding: 0;
     margin: 0;
     list-style: none;
 }
 
-#side-nav li {
+.side-nav li {
     padding: 15px 20px;
     display: flex;
     align-items: center;
@@ -191,21 +174,21 @@ section {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-#side-nav li:hover, #side-nav li.active {
+.side-nav li:hover, .side-nav li.active {
     background-color: #f1f1f1;
     color: #007BFF;
 }
 
-#side-nav li .material-icons {
+.side-nav li .material-icons {
     margin-right: 10px;
     font-size: 24px;
 }
 
-#side-nav li .tab-label {
+.side-nav li .tab-label {
     font-size: 16px;
 }
 
-#close-btn {
+.close-btn {
     position: absolute;
     top: 15px;
     right: 20px;
@@ -214,8 +197,104 @@ section {
     color: #333;
 }
 
+/* Overlay-Stil */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display: none;
+    z-index: 1040;
+    transition: opacity 0.3s ease;
+}
+
+.overlay.active {
+    display: block;
+}
+
+/* Responsive Anpassungen */
+
+/* Sichtbar auf mobilen Geräten */
+@media (max-width: 767px) {
+    .bottom-nav {
+        display: none; /* Versteckt die untere Navigation auf mobilen Geräten */
+    }
+
+    .hamburger-menu {
+        display: block; /* Zeigt das Hamburger-Symbol auf mobilen Geräten */
+    }
+
+    .side-nav.active {
+        left: 0; /* Zeigt das seitliche Menü */
+    }
+
+    /* Größere Icons und Beschriftungen für seitliches Menü */
+    .side-nav li .material-icons {
+        font-size: 1.75rem; /* 28px bei Standard-Schriftgröße */
+    }
+
+    .side-nav li .tab-label {
+        font-size: 0.875rem; /* 14px bei Standard-Schriftgröße */
+    }
+
+    /* Anpassungen für das Profil-Tab auf mobilen Geräten */
+    #profil {
+        background-size: contain; /* Passt das Bild an, ohne es zu skalieren */
+        background-position: top center; /* Positioniert das Bild oben zentriert */
+    }
+
+    .profil-container h1 {
+        font-size: 1.5rem;
+    }
+
+    .profil-container p {
+        font-size: 0.9rem;
+    }
+
+    /* Responsive Anpassungen für Profilfoto */
+    .profilfoto {
+        width: 120px; /* Kleinere Breite auf mobilen Geräten */
+        height: 120px; /* Kleinere Höhe auf mobilen Geräten */
+        border: 2px solid white; /* Dünnerer Rahmen auf mobilen Geräten */
+        margin: 15px auto; /* Angepasster vertikaler Abstand */
+    }
+
+    .download-button {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .profil-container {
+        padding: 10px;
+    }
+
+    .profil-container h1 {
+        font-size: 1.25rem;
+    }
+
+    .profil-container p {
+        font-size: 0.85rem;
+    }
+
+    .profilfoto {
+        width: 100px;
+        height: 100px;
+        border: 2px solid white;
+        margin-bottom: 10px;
+    }
+
+    .download-button {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+}
+
 /* Untere Navigationsleiste Stil */
-#nav-tabs {
+.bottom-nav {
     position: fixed;
     bottom: 50px; /* Platz für den Kontaktstreifen */
     width: 100%;
@@ -227,14 +306,15 @@ section {
     padding: 0; /* Entfernt zusätzliches Padding */
 }
 
-#nav-tabs ul {
+.bottom-nav ul {
     display: flex;
     justify-content: space-around;
-    align-items: center; /* Vertikale Zentrierung */
+    align-items: flex-end; /* Vertikale Zentrierung */
     height: 100%; /* Höhe des Containers */
+    /* gap: 10px; /* Abstand zwischen den Navigationselementen */
 }
 
-#nav-tabs li {
+.bottom-nav li {
     list-style: none;
     flex-grow: 1;
     text-align: center;
@@ -249,47 +329,77 @@ section {
     align-items: center;
 }
 
-#nav-tabs li:hover, #nav-tabs li:focus {
+.bottom-nav li:hover, .bottom-nav li:focus {
     color: #0056b3;
 }
 
-#nav-tabs li.active {
+.bottom-nav li.active {
     color: #007BFF;
     font-weight: bold;
 }
 
-#nav-tabs li .material-icons {
+.bottom-nav li .material-icons {
     display: block;
     font-size: 24px;
     transition: font-size 0.3s ease;
 }
 
-#nav-tabs li .tab-label {
+.bottom-nav li .tab-label {
     font-size: 0.875rem; /* 14px bei Standard-Schriftgröße */
     transition: font-size 0.3s ease;
 }
 
-#nav-tabs li:focus {
+.bottom-nav li:focus {
     outline: 2px solid #007BFF;
     outline-offset: 2px;
 }
 
-/* Overlay-Stil */
-#overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.5);
-    display: none;
-    z-index: 1040;
-    transition: opacity 0.3s ease;
+/* Größere Icons und Beschriftungen für mobile Geräte */
+@media (max-width: 767px) {
+    .bottom-nav {
+        padding: 10px 0; /* Erhöht den Innenabstand */
+    }
+
+    .bottom-nav li {
+        padding: 15px 0; /* Erhöht die Klickfläche */
+    }
+
+    .bottom-nav li .material-icons {
+        font-size: 1.75rem; /* Größere Icons *//* 28px bei Standard-Schriftgröße */
+    }
+
+    .bottom-nav li .tab-label {
+        font-size: 0.875rem; /* Größere Beschriftungen *//* 14px bei Standard-Schriftgröße */
+    }
 }
 
-#overlay.active {
-    display: block;
+/* Zusätzliche Media Queries für Tablets und größere Bildschirme */
+@media (min-width: 1024px) {
+    .bottom-nav li .material-icons {
+        font-size: 1.5rem; /* 24px */
+    }
+
+    .bottom-nav li .tab-label {
+        font-size: 1rem; /* 16px */
+    }
+    .profil-container h1 {
+        font-size: 1.75rem;
+    }
+
+    .profil-container p {
+        font-size: 1rem;
+    }
 }
+
+/*@media (max-width: 992px) {
+    .profil-container h1 {
+        font-size: 1.5rem;
+    }
+
+    .profil-container p {
+        font-size: 0.95rem;
+    }
+}*/
 
 /* Footer */
 footer {
@@ -412,7 +522,6 @@ a:hover {
 
 .centered ul {
     display: flex;
-    flex-wrap: wrap;
     text-align: left;
 }
 
@@ -588,141 +697,46 @@ a:hover {
 
 /* Responsive Anpassungen */
 
-/* Sichtbar auf mobilen Geräten */
+/* Für größere Bildschirme: Zwei Karten nebeneinander */
+@media (min-width: 768px) {
+    .project-card {
+        width: calc(50% - 40px); /* Zwei Karten pro Reihe mit Abstand */
+    }
+}
+
+/* Für kleinere Bildschirme: Eine Karte pro Reihe */
 @media (max-width: 767px) {
-    #nav-tabs {
-        display: none; /* Versteckt die untere Navigation auf mobilen Geräten */
-    }
-
-    #hamburger-icon {
-        display: block; /* Zeigt das Hamburger-Symbol auf mobilen Geräten */
-    }
-
-    /* Größere Icons und Beschriftungen für seitliches Menü */
-    #side-nav li .material-icons {
-        font-size: 1.75rem; /* 28px bei Standard-Schriftgröße */
-    }
-
-    #side-nav li .tab-label {
-        font-size: 0.875rem; /* 14px bei Standard-Schriftgröße */
-    }
-
-    /* Anpassungen für das Profil-Tab auf mobilen Geräten */
-    #profil {
-        background-size: contain; /* Passt das Bild an, ohne es zu skalieren */
-        background-position: top center; /* Positioniert das Bild oben zentriert */
-    }
-
-    .profil-container {
-        padding: 15px;
-    }
-
-    .profil-container h1 {
-        font-size: 1.5rem;
-    }
-
-    .profil-container p {
-        font-size: 0.9rem;
-    }
-
-    /* Responsive Anpassungen für Profilfoto */
-    .profilfoto {
-        width: 120px; /* Kleinere Breite auf mobilen Geräten */
-        height: 120px; /* Kleinere Höhe auf mobilen Geräten */
-        border: 2px solid white; /* Dünnerer Rahmen auf mobilen Geräten */
-        margin: 15px auto; /* Angepasster vertikaler Abstand */
-    }
-
-    .download-button {
-        padding: 8px 16px;
-        font-size: 0.9rem;
-    }
-
-    /* Zusätzliche Anpassungen für die Profil-Inhalt */
-    .profil-content {
-        padding: 10px;
+    .project-card {
+        width: 100%; /* Eine Karte pro Reihe */
     }
 }
 
-@media (max-width: 576px) {
-    .profil-container {
-        padding: 10px;
-    }
-
-    .profil-container h1 {
-        font-size: 1.25rem;
-    }
-
-    .profil-container p {
-        font-size: 0.85rem;
-    }
-
-    .profilfoto {
-        width: 100px;
-        height: 100px;
-        border: 2px solid white;
-        margin-bottom: 10px;
-    }
-
-    .download-button {
-        padding: 6px 12px;
-        font-size: 0.8rem;
-    }
+/* Abstand zwischen den Sektionen */
+.section {
+    margin-bottom: 60px; /* Abstand nach unten */
 }
 
-/* Zusätzliche Media Queries für Tablets und größere Bildschirme */
-@media (min-width: 1024px) {
-    #nav-tabs li .material-icons {
-        font-size: 1.5rem; /* 24px */
-    }
-
-    #nav-tabs li .tab-label {
-        font-size: 1rem; /* 16px */
-    }
-
-    .profil-container h1 {
-        font-size: 1.75rem;
-    }
-
-    .profil-container p {
-        font-size: 1rem;
-    }
+/* Überschreibe die max-width für die Projekte-Tab-Inhalte */
+.tab-content#projekte {
+    max-width: 1200px; /* Erhöht die maximale Breite */
+    margin: 0 auto;     /* Zentriert den Container */
+    padding: 20px;      /* Innenabstand */
 }
 
-@media (max-width: 992px) {
-    .profil-container h1 {
-        font-size: 1.5rem;
-    }
-
-    .profil-container p {
-        font-size: 0.95rem;
-    }
+/* Styling für den Download-Button */
+.download-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Leichter Schatten */
 }
 
-/* Animationen */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes slideInRight {
-    from {
-        opacity: 0;
-        transform: translateX(50%);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20%);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.download-button:hover {
+    background-color: #0056b3;
 }
