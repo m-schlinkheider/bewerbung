@@ -186,7 +186,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const contactInfoDiv = document.querySelector('.contact-info');
     contactInfoDiv.innerHTML = `
         <p><strong>E-Mail:</strong> <a href="mailto:${contactData.email}">${contactData.email}</a></p>
-        <p><strong></strong> ${contactData.phone}</p>
         <p><strong>LinkedIn:</strong> <a href="${contactData.linkedin}">${personalData.name}</a></p>
     `;
 

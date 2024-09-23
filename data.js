@@ -2,7 +2,8 @@
 const personalData = {
     name: 'Marcel Schlinkheider',
     description: '[Kurze Beschreibung über Sie]',
-    profileImage: 'assets/bild_linkedin.jpg' // Pfad zu Ihrem Profilbild
+    profileImage: 'assets/bild_linkedin.jpg', // Pfad zu Ihrem Profilbild
+    ImageVari: 'assets/Marcel_Auschnitt-rund.png'
 };
 
 // Kontaktinformationen
