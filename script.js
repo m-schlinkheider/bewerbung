@@ -120,6 +120,8 @@ document.addEventListener('DOMContentLoaded', function() {
     function setupTabs() {
         const allNavTabs = document.querySelectorAll('.bottom-nav li, .side-nav li');
         const tabContents = document.querySelectorAll('.tab-content');
+        const sideNav = document.getElementById('side-nav');
+        const overlay = document.getElementById('overlay');
 
         allNavTabs.forEach(tab => {
             tab.addEventListener('click', function() {
