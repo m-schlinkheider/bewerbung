@@ -213,6 +213,13 @@ const projectsData = [
             details: '',
             technologies: ['Webdesign', 'Wordpress-Design', 'Suchmaschinenoptimierung (SEO)'],
             image: 'assets/OSSTEC.jpg' // Pfad zum Bild
+        },
+        {
+            title: 'Webseite 2',
+            description: 'Beschreibung',
+            details: '',
+            technologies: ['Webdesign', 'Wordpress-Design', 'Suchmaschinenoptimierung (SEO)'],
+            image: 'assets/OSSTEC.jpg' // Pfad zum Bild
         }
      ]
 }  
