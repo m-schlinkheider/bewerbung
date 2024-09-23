@@ -41,7 +41,7 @@ section {
     background-image: url('assets/Marcel_Hintergrund.jpg'); /* Pfad zum Hintergrundbild */
     background-position: center; /* Zentriert das Bild */
     background-repeat: no-repeat; /* Verhindert das Wiederholen des Bildes */
-    background-size: cover; /* Skaliert das Bild, um den gesamten Container zu bedecken */
+    background-size: auto; /* Skaliert das Bild, um den gesamten Container zu bedecken */
     background-attachment: fixed; /* Optional: Fixiert das Hintergrundbild beim Scrollen */
     color: white; /* Setzt die Textfarbe auf Weiß */
     padding: 20px; /* Innenabstand für besseren Textabstand */
