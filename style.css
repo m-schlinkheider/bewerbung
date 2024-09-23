@@ -104,11 +104,29 @@ section {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Optional: Fügt einen leichten Schatten hinzu */
     margin: 20px auto; /* Zentriert das Bild innerhalb des Containers */
     display: block; /* Block-Element für Zentrierung */
+    transition: transform 0.3s ease;
 }
 
 .profilfoto:hover {
     transform: scale(1.05);
-    transition: transform 0.3s ease;
+}
+
+/* Styling für den Download-Button */
+.download-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Leichter Schatten */
+}
+
+.download-button:hover {
+    background-color: #0056b3;
 }
 
 /* #profil img {
@@ -721,22 +739,4 @@ a:hover {
     max-width: 1200px; /* Erhöht die maximale Breite */
     margin: 0 auto;     /* Zentriert den Container */
     padding: 20px;      /* Innenabstand */
-}
-
-/* Styling für den Download-Button */
-.download-button {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #007BFF;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Leichter Schatten */
-}
-
-.download-button:hover {
-    background-color: #0056b3;
 }

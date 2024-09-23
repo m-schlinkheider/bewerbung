@@ -192,8 +192,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialisierung
     generateNavigation();
-    setupTabs();
     setupHamburgerMenu();
+    setupTabs();
     initAccordions();
 });
 
