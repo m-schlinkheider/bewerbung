@@ -77,6 +77,10 @@ section {
     display: block; /* Block-Element für Zentrierung */
 }
 
+.profilfoto:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
 
 #profil img {
     border-radius: 50%;
