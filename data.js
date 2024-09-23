@@ -8,7 +8,7 @@ const personalData = {
 // Kontaktinformationen
 const contactData = {
     email: 'marcel_s@me.com',
-    phone: '0176/78367636',
+    phone: '',
     linkedin: 'https://www.linkedin.com/in/marcel-schlinkheider/'
 };
 
@@ -208,18 +208,20 @@ const projectsData = [
      category: 'Webentwicklung',
      projects: [
         {
-            title: 'Webseite 1',
-            description: 'Beschreibung',
+            title: 'Webseite & B2B Shop',
+            description: 'Ein Website die sowohl auf einem Magalog aufbaut um die Produktvielfalt und Möglichkeiten darzulegen. Als auch einen B2B Shop inkl. internen Anmeldung und Nutzung. Jeweils mit angepassten Benutzeroberflächen. Eine Vielzahl an Varianten und Möglichkeiten der Produktkonfiguration mussten hier ebenfalls eingebunden werden',
             details: '',
             technologies: ['Webdesign', 'Wordpress-Design', 'Suchmaschinenoptimierung (SEO)'],
-            image: 'assets/OSSTEC.jpg' // Pfad zum Bild
+            image: 'assets/OSSTEC.jpg', // Pfad zum Bild
+            link: 'https://www.osstec.de'
         },
         {
-            title: 'Webseite 2',
-            description: 'Beschreibung',
+            title: 'Stiftungs Webseite m. Spendenfunktionen',
+            description: 'Zudem war es hier wichtig eine Frontend Struktur und ein individuelles und einfaches Backend zu entwickeln. Sodass ein weiterer Nutzer auf einfache Weise Inhalte in Formularfelder eintragen und Dateien hochladen kann. Diese dann ohne weiteres Zutun des Nutzers an jeweils richtigen Stellen auf der Seite landen. Je nachdem als was der Inhalt markiert wird',
             details: '',
             technologies: ['Webdesign', 'Wordpress-Design', 'Suchmaschinenoptimierung (SEO)'],
-            image: 'assets/OSSTEC.jpg' // Pfad zum Bild
+            image: 'assets/augenblicke.png', // Pfad zum Bild
+            link: 'https://www.stiftung-augenblicke.de'
         }
      ]
 }  
