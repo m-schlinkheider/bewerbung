@@ -671,6 +671,19 @@ a:hover {
     cursor: default;
 }
 
+/* Layout für die Projekte-Container */
+.projects-container {
+    display: flex;
+    flex-wrap: wrap; /* Ermöglicht das Umfließen der Elemente */
+    gap: 20px; /* Abstand zwischen den Projektkarten */
+    justify-content: center; /* Zentriert die Karten innerhalb des Containers */
+}
+
+/* Optional: Layout für projektkategorien, falls mehrere Kategorien vorhanden sind */
+.project-category {
+    margin-bottom: 40px; /* Abstand zwischen den Kategorien */
+}
+
 /* Projektkarte */
 .project-card {
     display: flex;
@@ -684,7 +697,8 @@ a:hover {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     width: 100%; /* Standardbreite */
-    max-width: 600px; /* Maximale Breite pro Karte */
+    max-width: none; /* Entfernen der maximalen Breite */
+    box-sizing: border-box; /* Sicherstellen, dass Padding und Border in der Breite enthalten sind */
 }
 
 .project-card:hover {
@@ -724,7 +738,7 @@ a:hover {
 /* Für größere Bildschirme: Zwei Karten nebeneinander */
 @media (min-width: 768px) {
     .project-card {
-        width: calc(50% - 40px); /* Zwei Karten pro Reihe mit Abstand */
+        flex: 1 1 calc(50% - 40px); /* Optional: Flex-Grundlagen für Flexbox */
     }
 }
 
