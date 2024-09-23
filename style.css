@@ -27,16 +27,17 @@ body {
     display: block;
 }
 
-section h1, section h2 {
+.tab-section h1, .tab-section h2, .tab-section h3, .tab-section h4, .tab-section p, .tab-section a {
     margin-top: 0;
     color: #333;
 }
 
-section {
+.tab-section {
     margin-bottom: 30px;
 }
 
-#profil {
+/* Profil-Tab spezifische Stile (jetzt angewendet auf .tab-content#profil) */
+#profil.tab-content.active {
     background-image: url('assets/Marcel_Hintergrund.jpg'); /* Pfad zum Hintergrundbild */
     background-position: center; /* Zentriert das Bild */
     background-repeat: no-repeat; /* Verhindert das Wiederholen des Bildes */
