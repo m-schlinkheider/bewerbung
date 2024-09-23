@@ -48,6 +48,7 @@ section {
     box-sizing: border-box; /* Padding in der Gesamthöhe enthalten */
     position: relative; /* Für das Overlay */
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
