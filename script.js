@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
         switch (tab.id) {
             case 'profil':
                 sectionContent = `
-                    <section id="profil">
+                    <section class="tab-section">
                         <h1>${personalData.name}</h1>
                         <img src="${profileImage}" alt="Profilfoto" class="profilfoto">
                         <p>${personalData.description}</p>
@@ -42,14 +42,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 break;
             case 'faehigkeiten':
                 sectionContent = `
-                    <section id="faehigkeiten">
+                    <section class="tab-section">
                         ${generateSkillsSection(skillsData)}
                     </section>
                 `;
                 break;
             case 'berufspraxis':
                 sectionContent = `
-                    <section id="berufspraxis">
+                    <section class="tab-section">
                         <h2>Berufspraxis</h2>
                         ${generateExperienceSection(experienceData)}
                     </section>
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 break;
             case 'bildung':
                 sectionContent = `
-                    <section id="bildung">
+                    <section class="tab-section">
                         <h2>Bildung</h2>
                         ${generateEducationSection(educationData)}
                     </section>
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 break;
             case 'projekte':
                 sectionContent = `
-                    <section id="projekte">
+                    <section class="tab-section">
                         <h2>Projekte</h2>
                         ${generateProjectsSection(projectsData)}
                     </section>
