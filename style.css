@@ -37,7 +37,6 @@ section {
 }
 
 #profil {
-    text-align: center;
     background-image: url('assets/Marcel_Hintergrund.jpg'); /* Pfad zum Hintergrundbild */
     background-position: center; /* Zentriert das Bild */
     background-repeat: no-repeat; /* Verhindert das Wiederholen des Bildes */
@@ -48,7 +47,48 @@ section {
     min-height: 100vh; /* Mindesthöhe des Tabs */
     box-sizing: border-box; /* Padding in der Gesamthöhe enthalten */
     position: relative; /* Für das Overlay */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
+
+/* Hintergrund-Overlay für bessere Lesbarkeit */
+#profil::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Halbtransparente schwarze Überlagerung */
+    z-index: -1; /* Hinter dem Inhalt */
+}
+
+/* Container für das Profil-Inhalt */
+.profil-container {
+    max-width: 800px; /* Maximale Breite des Inhalts */
+    width: 100%; /* Volle Breite innerhalb des Containers */
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Überschriften und Texte */
+.profil-container h1 {
+    font-size: 2rem; /* Basisgröße für Desktop */
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Textschatten für bessere Lesbarkeit */
+}
+
+.profil-container p {
+    font-size: 1.125rem; /* Basisgröße für Desktop */
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Textschatten */
+}
+
 
 /* Zusätzliche Stile für Textelemente im Profil-Tab */
 #profil h1,
@@ -214,15 +254,53 @@ ul {
         background-position: top center; /* Positioniert das Bild oben zentriert */
     }
 
+    .profil-container h1 {
+        font-size: 1.5rem;
+    }
+
+    .profil-container p {
+        font-size: 0.9rem;
+    }
+
     /* Responsive Anpassungen für Profilfoto */
     .profilfoto {
-        width: 100px; /* Kleinere Breite auf mobilen Geräten */
-        height: 100px; /* Kleinere Höhe auf mobilen Geräten */
+        width: 120px; /* Kleinere Breite auf mobilen Geräten */
+        height: 120px; /* Kleinere Höhe auf mobilen Geräten */
         border: 2px solid white; /* Dünnerer Rahmen auf mobilen Geräten */
         margin: 15px auto; /* Angepasster vertikaler Abstand */
     }
+
+    .download-button {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
 }
 
+@media (max-width: 576px) {
+    .profil-container {
+        padding: 10px;
+    }
+
+    .profil-container h1 {
+        font-size: 1.25rem;
+    }
+
+    .profil-container p {
+        font-size: 0.85rem;
+    }
+
+    .profilfoto {
+        width: 100px;
+        height: 100px;
+        border: 2px solid white;
+        margin-bottom: 10px;
+    }
+
+    .download-button {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+}
 
 /* Untere Navigationsleiste Stil */
 .bottom-nav {
@@ -312,6 +390,23 @@ ul {
 
     .bottom-nav li .tab-label {
         font-size: 1rem; /* 16px */
+    }
+    .profil-container h1 {
+        font-size: 1.75rem;
+    }
+
+    .profil-container p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .profil-container h1 {
+        font-size: 1.5rem;
+    }
+
+    .profil-container p {
+        font-size: 0.95rem;
     }
 }
 
@@ -641,13 +736,14 @@ a:hover {
 .download-button {
     display: inline-block;
     margin-top: 20px;
-    padding: 12px 20px;
+    padding: 10px 20px;
     background-color: #007BFF;
-    color: #fff;
+    color: white;
     text-decoration: none;
-    font-size: 16px;
     border-radius: 5px;
+    font-size: 1rem;
     transition: background-color 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Leichter Schatten */
 }
 
 .download-button:hover {
