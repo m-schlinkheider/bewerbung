@@ -111,13 +111,13 @@ section {
     transition: transform 0.3s ease;
 }
 
-#profil img {
+/* #profil img {
     border-radius: 50%;
     width: 200px;
     height: 200px;
     object-fit: cover;
     margin-bottom: 20px;
-}
+}*/
 
 ul {
     list-style-type: none;
