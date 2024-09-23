@@ -151,10 +151,12 @@ ul {
     z-index: 1050;
     transition: left 0.3s ease;
     padding-top: 60px; /* Platz für den Schließen-Button */
+    pointer-events: none; /* Deaktiviert Interaktionen, wenn nicht aktiv */
 }
 
 .side-nav.active {
     left: 0; /* Zeigt das seitliche Menü */
+    pointer-events: auto; /* Aktiviert Interaktionen, wenn aktiv */
 }
 
 .side-nav ul {
