@@ -674,7 +674,7 @@ a:hover {
 /* Layout für die Projekte-Container */
 .projects-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
     flex-wrap: wrap; /* Ermöglicht das Umfließen der Elemente */
     gap: 20px; /* Abstand zwischen den Projektkarten */
