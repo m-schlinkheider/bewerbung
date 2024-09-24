@@ -749,6 +749,9 @@ a:hover {
     .project-card {
         width: 100%; /* Eine Karte pro Reihe */
     }
+    .project-card img {
+        width: 20rem;
+    }
 }
 
 /* Abstand zwischen den Sektionen */
