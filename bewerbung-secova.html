@@ -72,7 +72,7 @@
             width: 150px;
             height: 150px;
             object-fit: cover;
-        }
+        }      
 
         /* Optional: Navigationselemente entfernen oder anpassen */
         .navbar, .footer, .side-nav, .bottom-nav {
@@ -85,6 +85,35 @@
             font-family: 'Poppins', sans-serif;
             color: #333333;
         }
+
+        /* Container für Buttons und Bild */
+        .footer-buttons {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px; /* Abstand zwischen den Elementen */
+            margin-top: 40px; /* Abstand vom vorherigen Inhalt */
+        }
+
+        /* Container für die Buttons */
+        .footer-buttons .buttons {
+            display: flex;
+            gap: 20px; /* Abstand zwischen den Buttons */
+            flex-wrap: wrap; /* Buttons umbrechen, falls der Platz knapp ist */
+            justify-content: center; /* Zentriert die Buttons horizontal */
+        }
+
+        /* Anpassungen für kleinere Bildschirme */
+        @media (max-width: 767px) {
+            .footer-buttons .buttons {
+                flex-direction: column; /* Buttons untereinander bei kleinen Bildschirmen */
+                width: 100%;
+            }
+
+            .footer-buttons .buttons a.download-button-secova {
+                width: 100%; /* Buttons vollbreit bei kleinen Bildschirmen */
+            }
+        }        
 
         /* Responsives Design */
         @media (max-width: 600px) {
@@ -115,15 +144,19 @@
             Mit freundlichen Grüßen,<br><br>
             Max Mustermann
         </p>
-        <!-- Optional: Download-Link für ein detailliertes Anschreiben oder Lebenslauf -->
-        <a href="https://m-schlinkheider.github.io" class="download-button-secova" download>
-            Portfolio
-        </a>
+    <!-- Neuer Container für Buttons und Bild -->
+    <div class="footer-buttons">
+        <div class="buttons">
+            <a href="https://m-schlinkheider.github.io" class="download-button-secova" download>
+                Portfolio
+            </a>
+            <a href="assets/M-Schlinkheider_Lebenslauf_2024.pdf" class="download-button-secova" download>
+                Lebenslauf herunterladen
+            </a>
+        </div>
         <img src="assets/Marcel_Ausschnitt-rund.png" alt="Profilfoto" class="foto-bewerbung">
-        <a href="assets/M-Schlinkheider_Lebenslauf_2024.pdf" class="download-button-secova" download>
-            Lebenslauf herunterladen
-        </a>
-    </div> 
+    </div>
+</div>
         <!-- Externe JavaScript-Dateien -->
         <script src="data.js"></script>
         <script src="script.js"></script>
