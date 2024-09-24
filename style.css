@@ -709,10 +709,10 @@ a:hover {
 }
 
 .project-card img {
-    width: 400px;
+    width: 25rem;
     height: auto;
     border-radius: 5px;
-    object-fit: cover; /* Bild skalieren ohne Verzerrung */
+    object-fit: contain; /* Bild skalieren ohne Verzerrung */
 }
 
 /* Textbereich innerhalb der Projektkarte */
