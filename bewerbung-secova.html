@@ -20,6 +20,26 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
+        /* Icon-Container */
+        .icon-container {
+            display: flex;
+            flex-wrap: wrap; /* Ermöglicht das Umfließen der Icons bei kleineren Bildschirmen */
+            justify-content: flex-end; /* Rechtsausrichtung der Icons */
+            gap: 10px; /* Abstand zwischen den Icons */
+            margin-bottom: 20px; /* Abstand zwischen Icons und Überschrift */
+        }
+
+        /* Einzelne Icons */
+        .icon-container svg {
+            width: 36px;
+            height: 36px;
+            transition: transform 0.3s ease, fill 0.3s ease;
+        }
+
+        .icon-container svg:hover {
+            transform: scale(1.1); /* Leichte Vergrößerung beim Hover */
+        }
+
         .bewerbung-container h1 {
             font-family: Open Sans, sans-serif;
             text-align: center;
@@ -127,11 +147,36 @@
                 text-align: center;
                 padding: 12px 0;
             }
+            .icon-container {
+                justify-content: center; /* Zentriert die Icons auf kleinen Bildschirmen */
+            }
         }
     </style>
 </head>
 <body>  
     <div class="bewerbung-container">
+        <div class="icon-container">
+            <img src="assets/3d-unterweisungen.svg" alt="Icon 1" width="36" height="36">
+            <img src="assets/cockpit-secova-sam.svg" alt="Icon 1" width="36" height="36">
+            <img src="assets/compliancemanagement-software-online.svg" alt="Icon 1" width="36" height="36">
+            <img src="assets/dokumentenmanagement.svg" alt="Icon 1" width="36" height="36">
+            <img src="assets/ehs-manager-app-secova.svg" alt="Icon 1" width="36" height="36">
+            <img src="assets/ehs-software-basissystem.svg" alt="Icon 1" width="36" height="36">
+            <img src="assets/foster-themen-agrar.svg" alt="Icon 1" width="36" height="36">
+            <img src="assets/fremdfirmenmanagement-secova-sam.svg" alt="Icon 1" width="36" height="36">
+            <img src="assets/gefaehrdungsbeurteilung-software-online.svg" alt="Icon 1" width="36" height="36">
+            <img src="assets/gefahrstoffmanagement-software-online.svg" alt="Icon 1" width="36" height="36">
+            <img src="assets/gesundheitsmanagement-software-online.svg" alt="Icon 1" width="36" height="36">
+            <img src="assets/ideenmanagement-software-online.svg" alt="Icon 1" width="36" height="36">
+            <img src="assets/instandhaltungsmanagement-software-online.svg" alt="Icon 1" width="36" height="36">
+            <img src="assets/PSA-management-PSA-manager-von-secova.svg" alt="Icon 1" width="36" height="36">
+            <img src="assets/qualifikationsmanagement-qualifikationsmatrix-software-online.svg" alt="Icon 1" width="36" height="36">
+            <img src="assets/sam-voting-app.svg" alt="Icon 1" width="36" height="36">
+            <img src="assets/umfragemanagement-software-online.svg" alt="Icon 1" width="36" height="36">
+            <img src="assets/vorfallmanagement-software-online.svg" alt="Icon 1" width="36" height="36">
+            <img src="assets/vr-virtual-reality-sam.svg" alt="Icon 1" width="36" height="36">
+            <!-- Weitere Icons -->
+        </div>
         <h1>Bewerbung als Software Frontend Developer, Anwendungsentwickler</h1>
         <p class="anrede">
             Moin Moin Frau Nowotny,</br>
