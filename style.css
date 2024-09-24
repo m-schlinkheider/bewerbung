@@ -689,7 +689,7 @@ a:hover {
 /* Projektkarte */
 .project-card {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: flex-start;
     gap: 20px; /* Abstand zwischen Bild und Text */
     background-color: #f9f9f9;
@@ -709,7 +709,7 @@ a:hover {
 }
 
 .project-card img {
-    width: 150px;
+    width: 400px;
     height: auto;
     border-radius: 5px;
     object-fit: cover; /* Bild skalieren ohne Verzerrung */
