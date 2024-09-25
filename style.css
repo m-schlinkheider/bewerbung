@@ -150,6 +150,7 @@ ul {
 
 /* Hamburger Menü Stil */
 .hamburger-menu {
+    color: #007BFF;
     display: none; /* Standardmäßig ausgeblendet */
     position: fixed;
     top: 15px;
