@@ -150,7 +150,6 @@ ul {
 
 /* Hamburger Menü Stil */
 .hamburger-menu {
-    color: #007BFF;
     display: none; /* Standardmäßig ausgeblendet */
     position: fixed;
     top: 15px;
@@ -161,7 +160,7 @@ ul {
 
 .hamburger-menu .material-icons {
     font-size: 32px;
-    color: #333;
+    color: #007BFF;
 }
 
 /* Seitliches Menü Stil */
